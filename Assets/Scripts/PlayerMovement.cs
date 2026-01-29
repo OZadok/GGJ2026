@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue value)
     {
         var moveDirection2D = value.Get<Vector2>();
-        _moveDirection = new Vector3(moveDirection2D.x, 0, moveDirection2D.y);
+        _moveDirection = new Vector3(moveDirection2D.x, moveDirection2D.y, 0);
     }
 
     private void FixedUpdate()
