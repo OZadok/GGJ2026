@@ -7,6 +7,7 @@ namespace Core
         public static EntityManager Instance { get; private set; }
 
         [SerializeField] private GameObject playerPrefab;
+        [SerializeField] private GameObject itemPrefab;
         [SerializeField] private GameObject npcPrefab;
         
         private void Awake()
@@ -24,6 +25,12 @@ namespace Core
         {
             var entity = Instantiate(npcPrefab, point.spawnPoint.position, Quaternion.identity); 
             entity.GetComponent<NpcScript>().Init(point, group);
+            EquipmentAnchors anchors = entity.GetComponent<EquipmentAnchors>();
+            foreach (var item in group.items)
+            {
+                Transform position = anchors.GetItemPosition(item.itemType);
+                Instantiate(itemPrefab,position,false);
+            }
         }
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
-    public List<Wearables> wearables;
     public List<Item> items;
 
     private Collector _collector;
