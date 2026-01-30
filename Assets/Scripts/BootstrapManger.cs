@@ -36,10 +36,10 @@ public class BootstrapManger: MonoBehaviour
         backgroundRenderer.sprite = currentLevel.bgImage;
         backgroundMusic.clip = currentLevel.backgroundMusic;
 
-        foreach (var zone in currentLevel.zoneData)
+        foreach (var zone in currentLevel.zones)
         {
-            var zoneGameObject = Instantiate(currentLevel.zonePrefab, zone.zonePostion, Quaternion.identity);
-            zoneGameObject.GetComponent<Zone>().Init(zone);
+            var zoneGameObject = Instantiate(zone.zonePrefab, zone.position, Quaternion.identity);
+            zoneGameObject.GetComponent<Zone>().Init(zone.zoneData, zone.position);
         }
 
         foreach (var dispenserData in currentLevel.dispenserData)

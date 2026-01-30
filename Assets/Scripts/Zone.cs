@@ -14,7 +14,7 @@ public class Zone : MonoBehaviour, IInteractable
     private List<NpcScript> _npcs = new List<NpcScript>();
 
     //List<NPCScript> npcs;
-    public void Init(ZoneData zoneData)
+    public void Init(ZoneData zoneData, Vector2 positon)
     {
         if (spawnPoints.Count < zoneData.npcGroups.Count)
         {
@@ -22,7 +22,7 @@ public class Zone : MonoBehaviour, IInteractable
             return;
         }
         int i = 0;
-        transform.position = zoneData.zonePostion;
+        transform.position = positon;
         foreach (Group group in zoneData.npcGroups)
         {
             // int spawnPointIndex = Random.Range(0, spawnPoints.Count); // need to add something to keep track of used sp's
