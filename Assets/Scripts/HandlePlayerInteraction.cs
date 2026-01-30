@@ -7,25 +7,34 @@ public class HandlePlayerInteraction : MonoBehaviour
     private EntityScript _entityScript;
 
     private System.Action _interaction;
+    private PlayerScript _playerScript;
 
     private void Awake()
     {
         _entityScript = GetComponent<EntityScript>();
+        _playerScript = GetComponent<PlayerScript>();
     }
 
     private void OnEnable()
     {
         Dispenser.OnItemCollected += DispenserOnOnItemCollected;
+        Zone.OnJoinedToZone += ZoneOnOnJoinedToZone;
     }
 
     private void OnDisable()
     {
         Dispenser.OnItemCollected -= DispenserOnOnItemCollected;
+        Zone.OnJoinedToZone -= ZoneOnOnJoinedToZone;
     }
 
     private void DispenserOnOnItemCollected(Item item)
     {
         _entityScript.SetItem(item);
+    }
+    
+    private void ZoneOnOnJoinedToZone(Zone zone)
+    {
+        _playerScript.JoinZone(zone);
     }
     
     private void OnTriggerEnter2D(Collider2D other)

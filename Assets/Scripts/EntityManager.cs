@@ -20,15 +20,18 @@ namespace Core
             Instance = this;
         }
 
-        public void SpawnNpc(SpawnPoint point, Group group)
+        public NpcScript SpawnNpc(SpawnPoint point, Group group)
         {
             var entity = Instantiate(npcPrefab, point.spawnPoint.position, Quaternion.identity); 
-            entity.GetComponent<NpcScript>().Init(point, group);
+            var npcScript = entity.GetComponent<NpcScript>();
+            npcScript.Init(point, group);
             EquipmentAnchors anchors = entity.GetComponent<EquipmentAnchors>();
             foreach (var item in group.items)
             {
                 SpawnItem(anchors, item);
             }
+
+            return npcScript;
         }
 
         private void SpawnItem(EquipmentAnchors anchors, Item item)

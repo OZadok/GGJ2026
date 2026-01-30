@@ -27,8 +27,8 @@ public class NpcScript : MonoBehaviour
         // ReSharper disable once IteratorNeverReturns
     }
 
-    private void OnSuspicious(bool isSuspicious)
+    public void OnSuspicious(bool isSuspicious)
     {
-        
+        Debug.Log($"isSuspicious: {isSuspicious}");
     }
 }

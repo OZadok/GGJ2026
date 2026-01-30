@@ -1,35 +1,24 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class PlayerScript : MonoBehaviour
 {
-    public List<Item> items;
+    private Zone _zone;
+    private EntityScript _entityScript;
 
-    private Collector _collector;
-
-    
-
-    public void OnInteract(InputAction.CallbackContext context)
+    private void Awake()
     {
-        if (!context.ReadValueAsButton()) return;
-        
-        // check for interaction that can be
-        // e.g. take beer, join zone, etc...
-        if (_collector)
-        {
-            _collector.Collect(this);
-        }
+        _entityScript =  GetComponent<EntityScript>();
     }
 
-    public void SetCollector(Collector collector)
+    public void JoinZone(Zone zone)
     {
-        _collector = collector;
-    }
+        Debug.Log("Join Zone " + zone.name);
 
-    private void JoinZone(ZoneData zoneData)
-    {
+
+        var wasBlend = MainManager.Instance.IsBlendingToGroup(_entityScript);
+        zone.AlertNpcs(wasBlend);
+        // zone.
         // put player in the position he needs to be?
         // check for valid group.
         // if player is not in valid group
