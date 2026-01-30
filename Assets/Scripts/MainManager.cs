@@ -85,6 +85,7 @@ public class MainManager : MonoBehaviour
         if (_levelTimerCoroutine != null)
             StopCoroutine(_levelTimerCoroutine);
 
+        playerPrefab.Reset();
         BootstrapManger.Instance.SetupLevel(level);
         _levelTimerCoroutine = StartCoroutine(LevelCountDown());
     }
