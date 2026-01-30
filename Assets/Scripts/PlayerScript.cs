@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,7 +8,9 @@ public class PlayerScript : MonoBehaviour
     public List<Item> items;
 
     private Collector _collector;
+
     
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.ReadValueAsButton()) return;

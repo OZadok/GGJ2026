@@ -75,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3334467362067530052, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1535458695433540455}
+    - targetCorrespondingSourceObject: {fileID: 3334467362067530052, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5808148287072413433}
   m_SourcePrefab: {fileID: 100100000, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
 --- !u!1 &3778367979051269101 stripped
 GameObject:
@@ -132,8 +135,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1072298489468544787}
-        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+      - m_Target: {fileID: 5808148287072413433}
+        m_TargetAssemblyTypeName: HandlePlayerInteraction, Assembly-CSharp
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -235,8 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ffe08902fcbcd40823ea2a1e6a5df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
-  wearables: 
-  items: 
+  items: []
 --- !u!61 &5355697275042852389
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -310,3 +312,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5808148287072413433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778367979051269101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0c389e99f088a4f87137a75973d8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandlePlayerInteraction
