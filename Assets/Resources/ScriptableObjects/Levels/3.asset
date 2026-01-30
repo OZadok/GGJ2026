@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   bgImage: {fileID: 1286810511635572827, guid: a33ccbd6e7942c34786b7d740d4c1359, type: 3}
   backgroundMusic: {fileID: 8300000, guid: fc1099cf3021b4b74af839c14be48d84, type: 3}
-  zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
-  zoneData:
-  - {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
-  - {fileID: 11400000, guid: fe7189306e7ca4869bf80c5186052cfd, type: 2}
-  - {fileID: 11400000, guid: 5f44fe4db70114b909669575d6efbc39, type: 2}
-  - {fileID: 11400000, guid: fcee0f23764ad42aea7a254454a56a72, type: 2}
-  - {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
+  zones:
+  - zoneData: {fileID: 11400000, guid: fcee0f23764ad42aea7a254454a56a72, type: 2}
+    position: {x: -1.91, y: -2.33}
+    zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
+  - zoneData: {fileID: 11400000, guid: 5f44fe4db70114b909669575d6efbc39, type: 2}
+    position: {x: 10.67, y: 1.47}
+    zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   dispenserData:
   - {fileID: 11400000, guid: 7fe14c01551bd724a85cfbd2db52d287, type: 2}
   - {fileID: 11400000, guid: 784b0b2761ad14e33b07d759a4032c27, type: 2}

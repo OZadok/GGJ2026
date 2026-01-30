@@ -119,25 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &241480676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4121025924078961146, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
-  m_PrefabInstance: {fileID: 1546438908112592216}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &241480678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241480676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 928fc1ee036f58d47900d362837f7ea8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelVisualizer
-  levelData: {fileID: 11400000, guid: 68ffe833f2e764871ae9329a8a3f0c6f, type: 2}
-  enable: 1
 --- !u!1 &518093808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,22 +1158,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1209551322089280380, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209551322089280380, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209551322089280380, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209551322089280380, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 1602161793535639080, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 072c345beb0e1473e813ae187044a1cd, type: 2}
     - target: {fileID: 3445246279975235526, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
       propertyPath: backgroundRenderer
       value: 
@@ -1276,10 +1245,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4121025924078961146, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 241480678}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -9,9 +9,9 @@ public class LevelVisualizer : MonoBehaviour
     {
         if (!enable) return;
         Gizmos.color = Color.green;
-        foreach (var zone in levelData.zoneData)
+        foreach (var zone in levelData.zones)
         {
-            Gizmos.DrawWireSphere(zone.zonePostion, 0.5f);
+            Gizmos.DrawWireSphere(zone.position, 0.5f);
         }
         Gizmos.color = Color.red;
         foreach (var dispenser in levelData.dispenserData)
