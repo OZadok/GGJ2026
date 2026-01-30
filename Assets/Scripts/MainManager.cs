@@ -50,7 +50,7 @@ public class MainManager : MonoBehaviour
             bool wasBroke = false;
             foreach (var item in group.items)
             {
-                if (!playerEntity.items.ContainsKey(item.itemType) || playerEntity.items[item.itemType] != item)
+                if (!playerEntity.items.ContainsKey(item.itemType))
                 {
                     wasBroke = true;
                     break;
