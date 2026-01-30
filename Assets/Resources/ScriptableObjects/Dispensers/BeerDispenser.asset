@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b72e238d81365469b86775443b2a63, type: 3}
   m_Name: BeerDispenser
   m_EditorClassIdentifier: Assembly-CSharp::DispenserData
-  position: {x: -5, y: 2.5}
+  position: {x: 0.5, y: 3.5}
   prefab: {fileID: 6332010250965427590, guid: 4b7127612c28b4b848ce4710c0b8ab4d, type: 3}
   item: {fileID: 11400000, guid: 7051bd2a2f1c3af46a492835a8b2dc8c, type: 2}
