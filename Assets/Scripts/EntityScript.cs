@@ -8,7 +8,7 @@ public class EntityScript : MonoBehaviour
     private static readonly int Action2 = Animator.StringToHash("Action2");
     private static readonly int Action3 = Animator.StringToHash("Action3");
     private EquipmentAnchors _equipmentAnchors;
-    public Dictionary<ItemType, Item> items =  new Dictionary<ItemType, Item>();
+    public Dictionary<ItemType, GameObject> items =  new Dictionary<ItemType, GameObject>();
     
     private Animator _animator;
 
@@ -23,7 +23,7 @@ public class EntityScript : MonoBehaviour
         //set item sprite at the position.
         Transform position = _equipmentAnchors.GetItemPosition(item.itemType);
         var go = Instantiate(item.itemPrefab ,position,false);
-        items[item.itemType] = item;
+        items[item.itemType] = go;
     }
 
     public int GetItemsCount()
