@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MainManager: MonoBehaviour
@@ -7,10 +9,12 @@ public class MainManager: MonoBehaviour
     public event Action<int> OnTimerUpdated;
     public static MainManager Instance { get; private set; }
     
-    [SerializeField] private int level = 1;
+    [SerializeField] private int level = 0;
     [SerializeField] private int levelTimeSeconds = 30;
 
     private Coroutine _levelTimerCoroutine;
+    private List<Group> _groups;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -20,11 +24,44 @@ public class MainManager: MonoBehaviour
         }
 
         Instance = this;
+        Initialize();
+    }
+    
+    private void Initialize()
+    {
+        _groups = Resources.LoadAll<Group>("ScriptableObjects/Groups").ToList();
     }
 
     private void Start()
     {
         StartLevel();
+    }
+
+    public Group GetGroupIsBlendingTo(EntityScript playerEntity)
+    {
+        foreach (var group in _groups)
+        {
+            if (group.items.Count != playerEntity.GetItemsCount())
+            {
+                continue;
+            }
+
+            bool wasBroke = false;
+            foreach (var item in group.items)
+            {
+                if (!playerEntity.items.ContainsKey(item.itemType) || playerEntity.items[item.itemType] != item)
+                {
+                    wasBroke = true;
+                    break;
+                }
+            }
+            if (wasBroke)
+            {
+                continue;
+            }
+            return group;
+        }
+        return null;
     }
     
     private void StartLevel()

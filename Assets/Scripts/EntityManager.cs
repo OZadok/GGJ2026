@@ -7,7 +7,6 @@ namespace Core
         public static EntityManager Instance { get; private set; }
 
         [SerializeField] private GameObject playerPrefab;
-        [SerializeField] private GameObject itemPrefab;
         [SerializeField] private GameObject npcPrefab;
         
         private void Awake()
@@ -21,16 +20,24 @@ namespace Core
             Instance = this;
         }
 
-        public void SpawnNpc(SpawnPoint point, Group group)
+        public NpcScript SpawnNpc(SpawnPoint point, Group group)
         {
             var entity = Instantiate(npcPrefab, point.spawnPoint.position, Quaternion.identity); 
-            entity.GetComponent<NpcScript>().Init(point, group);
+            var npcScript = entity.GetComponent<NpcScript>();
+            npcScript.Init(point, group);
             EquipmentAnchors anchors = entity.GetComponent<EquipmentAnchors>();
             foreach (var item in group.items)
             {
-                Transform position = anchors.GetItemPosition(item.itemType);
-                Instantiate(itemPrefab,position,false);
+                SpawnItem(anchors, item);
             }
+
+            return npcScript;
+        }
+
+        private void SpawnItem(EquipmentAnchors anchors, Item item)
+        {
+            Transform position = anchors.GetItemPosition(item.itemType);
+            Instantiate(item.itemPrefab,position,false);
         }
     }
 }

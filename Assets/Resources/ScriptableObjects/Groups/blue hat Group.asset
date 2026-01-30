@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7d7555e8e50d948a96daec73ee0d6e, type: 3}
+  m_Name: blue hat Group
+  m_EditorClassIdentifier: Assembly-CSharp::Group
+  items:
+  - {fileID: 11400000, guid: f4dd33db35a384b41a9b15620348bebe, type: 2}
+  actions:
+  - type: 0
+    minTime: 5
+    maxTime: 8

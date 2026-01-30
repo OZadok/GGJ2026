@@ -1,10 +1,17 @@
+using System;
 using System.Collections.Generic;
 using Core;
 using UnityEngine;
 
-public class Zone : MonoBehaviour
+public class Zone : MonoBehaviour, IInteractable
 {
     [SerializeField] List<SpawnPoint> spawnPoints;
+    
+    [SerializeField] private GameObject interactButtonView;
+    
+    public static event Action<Zone> OnJoinedToZone;
+    
+    private List<NpcScript> _npcs = new List<NpcScript>();
 
     //List<NPCScript> npcs;
     public void Init(ZoneData zoneData)
@@ -20,9 +27,34 @@ public class Zone : MonoBehaviour
         {
             // int spawnPointIndex = Random.Range(0, spawnPoints.Count); // need to add something to keep track of used sp's
             var point = spawnPoints[i];
-            EntityManager.Instance.SpawnNpc(point, group);
+            var npcScript = EntityManager.Instance.SpawnNpc(point, group);
+            _npcs.Add(npcScript);
             i++;
         }
+    }
+
+    private void Start()
+    {
+        ToggleInteractButton(false);
+    }
+
+    public void AlertNpcs(bool isBlending)
+    {
+        foreach (var npc in _npcs)
+        {
+            npc.OnSuspicious(!isBlending);
+        }
+    }
+
+    public void Interact()
+    {
+        OnJoinedToZone?.Invoke(this);
+        ToggleInteractButton(false);
+    }
+
+    public void ToggleInteractButton(bool toShow)
+    {
+        interactButtonView.SetActive(toShow);
     }
 }
 [System.Serializable]
