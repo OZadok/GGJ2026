@@ -52,12 +52,12 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Join Zone " + zone.name);
         
         _group = MainManager.Instance.GetGroupIsBlendingTo(_entityScript);
-        IsSus = false;
+        IsSus = !_group || _group.actions.Count > 0;
         zone.AlertNpcs(_group);
         _zone = zone;
         
         // put player in the position he needs to be?
-        if (_group)
+        if (_group && _group.actions.Count > 0)
         {
             _waitFOrActionCoroutine = StartCoroutine(WaitForAction());
         }
@@ -78,6 +78,7 @@ public class PlayerScript : MonoBehaviour
             || _action3 && action.type == ActionsType.Hurray)
         {
             _zone.AlertNpcs(true);
+            IsSus = false;
             _action1 = false;
             _action2 = false;
             _action3 = false;
@@ -94,6 +95,7 @@ public class PlayerScript : MonoBehaviour
                  || _action3 && action.type == ActionsType.Hurray))
             {
                 _zone.AlertNpcs(true);
+                IsSus = false;
                 startTime = Time.time;
                 _action1 = false;
                 _action2 = false;
