@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: ee26692478bfc8e409530a14f45d9c6b
+guid: 317e18ee965c15a49adbaf5f73746603
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8172192839568714813
-    second: Timer Fill_0
-  - first:
-      213: -4119710085162670992
-    second: Timer Fill_1
+      213: -6637092451245929220
+    second: UI Mock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Timer Fill_0
+      name: UI Mock_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 411
-        height: 506
+        width: 3840
+        height: 2160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c3148919e9869e80800000000000000
-      internalID: -8172192839568714813
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Timer Fill_1
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 26
-        width: 195
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 074e8443189d3d6c0800000000000000
-      internalID: -4119710085162670992
+      spriteID: cfc4f06949f44e3a0800000000000000
+      internalID: -6637092451245929220
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Timer Fill_0: -8172192839568714813
-      Timer Fill_1: -4119710085162670992
+      UI Mock_0: -6637092451245929220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
