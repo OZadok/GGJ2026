@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UI;
@@ -6,7 +5,6 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    public event Action<float, float> OnTimerUpdated;
     public static MainManager Instance { get; private set; }
 
     [SerializeField] private int level = 0;
@@ -14,6 +12,9 @@ public class MainManager : MonoBehaviour
     [SerializeField] private PlayerScript playerPrefab;
     [SerializeField] private GameOverPanel gameOverPanel;
     [SerializeField] private LevelClearedPanel levelClearedPanel;
+    public float RemainingTime => _remainingTime;
+    public float LevelTimeSeconds => levelTimeSeconds;
+
     private float _remainingTime;
     private bool _timerActive;
     private List<Group> _groups;
@@ -45,8 +46,7 @@ public class MainManager : MonoBehaviour
         if (!_timerActive)
             return;
 
-        _remainingTime = Mathf.Max(0f, _remainingTime - Time.deltaTime);
-        OnTimerUpdated?.Invoke(_remainingTime, levelTimeSeconds);
+        _remainingTime -= Time.deltaTime;
 
         if (_remainingTime <= 0f)
         {
@@ -99,7 +99,6 @@ public class MainManager : MonoBehaviour
         _timerActive = false;
         _remainingTime = 0f;
         InvokePursuer();
-        OnTimerUpdated?.Invoke(0f, levelTimeSeconds);
     }
     private void StartLevel()
     {
@@ -108,7 +107,6 @@ public class MainManager : MonoBehaviour
         BootstrapManger.Instance.SetupLevel(level);
         _remainingTime = levelTimeSeconds;
         _timerActive = true;
-        OnTimerUpdated?.Invoke(_remainingTime, levelTimeSeconds);
     }
 
     private void InvokePursuer()

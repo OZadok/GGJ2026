@@ -70,6 +70,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3689664276796005874, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
+      propertyPath: interactButtonView
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4442813996130876307, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Name
       value: BeerDispenser Variant
