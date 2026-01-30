@@ -17,7 +17,10 @@ public struct Action
 }
 public enum ActionsType
 {
-    Drink,
-    PunchTable
+    None = 0,
+    Drink = 1,
+    PunchTable = 2,
+    Hurray = 3,
+    
 }
 

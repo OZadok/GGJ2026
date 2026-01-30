@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d542e1be8a23244a71172ed09f3e42, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  bgImage: {fileID: 1286810511635572827, guid: a33ccbd6e7942c34786b7d740d4c1359, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: fc1099cf3021b4b74af839c14be48d84, type: 3}
+  zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
+  zoneData:
+  - {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
+  - {fileID: 11400000, guid: fe7189306e7ca4869bf80c5186052cfd, type: 2}
+  - {fileID: 11400000, guid: fe7189306e7ca4869bf80c5186052cfd, type: 2}
+  - {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
+  - {fileID: 11400000, guid: fe7189306e7ca4869bf80c5186052cfd, type: 2}
+  dispenserData:
+  - {fileID: 11400000, guid: 7fe14c01551bd724a85cfbd2db52d287, type: 2}
+  - {fileID: 11400000, guid: 7fcfeb34f60ce4910adf33e20bc4a772, type: 2}

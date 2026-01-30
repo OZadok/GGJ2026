@@ -8,7 +8,6 @@ public class LevelData : ScriptableObject
     public AudioClip backgroundMusic;
     public GameObject zonePrefab;
     public List<ZoneData> zoneData;
-public List<DispenserData> dispenserData;
-    
+    public List<DispenserData> dispenserData;
 
 }

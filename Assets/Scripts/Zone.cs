@@ -6,11 +6,11 @@ using UnityEngine;
 public class Zone : MonoBehaviour, IInteractable
 {
     [SerializeField] List<SpawnPoint> spawnPoints;
-    
+
     [SerializeField] private GameObject interactButtonView;
-    
+
     public static event Action<Zone> OnJoinedToZone;
-    
+
     private List<NpcScript> _npcs = new List<NpcScript>();
 
     //List<NPCScript> npcs;
@@ -55,6 +55,14 @@ public class Zone : MonoBehaviour, IInteractable
     public void ToggleInteractButton(bool toShow)
     {
         interactButtonView.SetActive(toShow);
+    }
+
+    void OnDrawGizmos()
+    {
+        foreach (var item in spawnPoints)
+        {
+            Gizmos.DrawWireSphere(item.spawnPoint.position, 0.5f);
+        }
     }
 }
 [System.Serializable]

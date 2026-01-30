@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour
 
     private void Awake()
     {
+        IsSus = true;
         _entityScript =  GetComponent<EntityScript>();
     }
 
