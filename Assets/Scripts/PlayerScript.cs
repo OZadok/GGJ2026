@@ -62,6 +62,7 @@ public class PlayerScript : MonoBehaviour
             if (Time.time - startTime > timeToAction)
             {
                 _zone.AlertNpcs(false);
+                startTime = Time.time;
             }
         }
     }
