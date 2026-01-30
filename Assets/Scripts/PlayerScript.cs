@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 
 public class PlayerScript : MonoBehaviour
 {
@@ -19,11 +17,13 @@ public class PlayerScript : MonoBehaviour
     private bool _actionIsPressed;
     
     private Coroutine _waitFOrActionCoroutine;
-
+    private Vector3 _originPosition;
+    
     private void Awake()
     {
         IsSus = true;
         _entityScript =  GetComponent<EntityScript>();
+        _originPosition = transform.position;
     }
 
     private void OnEnable()
@@ -47,6 +47,13 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        transform.position = _originPosition;
+        _entityScript.items.Clear();
+        IsSus = true;
+    }
+    
     public void JoinZone(Zone zone)
     {
         Debug.Log("Join Zone " + zone.name);
