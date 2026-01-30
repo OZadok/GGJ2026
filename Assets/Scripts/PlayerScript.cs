@@ -40,8 +40,9 @@ public class PlayerScript : MonoBehaviour
         while (_zone)
         {
             yield return null;
-            if (_action1 && _group.actions[0].type == ActionsType.Drink 
-                || _action2 && _group.actions[0].type == ActionsType.PunchTable)
+            if (Time.time - startTime >= _group.actions[0].minTime && 
+                (_action1 && _group.actions[0].type == ActionsType.Drink 
+                 || _action2 && _group.actions[0].type == ActionsType.PunchTable))
             {
                 _zone.AlertNpcs(true);
                 startTime = Time.time;
