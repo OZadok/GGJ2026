@@ -24,4 +24,19 @@ public class EntityScript : MonoBehaviour
     {
         return items.Count;
     }
+    
+    public void DoAction1()
+    {
+        Debug.Log($"{name} did action 1");
+    }
+
+    public void DoAction2()
+    {
+        Debug.Log($"{name} did action 2");
+    }
+    
+    public void DoAction3()
+    {
+            
+    }
 }

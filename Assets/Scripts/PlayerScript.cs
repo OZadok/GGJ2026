@@ -63,15 +63,27 @@ public class PlayerScript : MonoBehaviour
     public void OnAction1(InputAction.CallbackContext context)
     {
         _action1 = context.performed;
+        if (_action1)
+        {
+            _entityScript.DoAction1();
+        }
     }
     
     public void OnAction2(InputAction.CallbackContext context)
     {
         _action2 = context.performed;
+        if (_action2)
+        {
+            _entityScript.DoAction2();
+        }
     }
     
     public void OnAction3(InputAction.CallbackContext context)
     {
         _action3 = context.performed;
+        if (_action3)
+        {
+            _entityScript.DoAction3();
+        }
     }
 }
