@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
+using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 
 public class PlayerScript : MonoBehaviour
 {
+
+    public bool IsSus { get; private set; }
     private Zone _zone;
     private EntityScript _entityScript;
     
@@ -17,12 +21,29 @@ public class PlayerScript : MonoBehaviour
         _entityScript =  GetComponent<EntityScript>();
     }
 
+    private void OnEnable()
+    {
+        Messenger.Default.Subscribe<PlayerZoneChangeEvent>(OnPlayerZoneChange);
+    }
+
+    private void OnDisable()
+    {
+        Messenger.Default.Unsubscribe<PlayerZoneChangeEvent>(OnPlayerZoneChange);
+    }
+
+    private void OnPlayerZoneChange(PlayerZoneChangeEvent playerZoneChangeEvent)
+    {
+        if (playerZoneChangeEvent.Zone) return;
+        _zone = null;
+        IsSus = true;
+    }
+
     public void JoinZone(Zone zone)
     {
         Debug.Log("Join Zone " + zone.name);
-
         
         _group = MainManager.Instance.GetGroupIsBlendingTo(_entityScript);
+        IsSus = false;
         zone.AlertNpcs(_group);
         _zone = zone;
         
@@ -31,6 +52,8 @@ public class PlayerScript : MonoBehaviour
         {
             StartCoroutine(WaitForAction());
         }
+
+        Messenger.Default.Publish(new PlayerZoneChangeEvent(zone));
     }
 
     private IEnumerator WaitForAction()
@@ -54,6 +77,7 @@ public class PlayerScript : MonoBehaviour
             {
                 // incorrect action
                 _zone.AlertNpcs(false);
+                IsSus = true;
                 startTime = Time.time;
                 _action1 = false;
                 _action2 = false;
@@ -63,6 +87,7 @@ public class PlayerScript : MonoBehaviour
             if (Time.time - startTime > timeToAction)
             {
                 _zone.AlertNpcs(false);
+                IsSus = true;
                 startTime = Time.time;
             }
         }
