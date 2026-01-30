@@ -30,7 +30,15 @@ public class HandlePlayerInteraction : MonoBehaviour
 
     private void DispenserOnOnItemCollected(Item item)
     {
-        _entityScript.SetItem(item);
+        if (_entityScript.items.ContainsKey(item.itemType))
+        {
+            Destroy(_entityScript.items[item.itemType].gameObject);
+            _entityScript.items.Remove(item.itemType);
+        }
+        else
+        {
+            _entityScript.SetItem(item);
+        }
     }
     
     private void ZoneOnOnJoinedToZone(Zone zone)
