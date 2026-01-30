@@ -7,7 +7,7 @@ public class MainManager: MonoBehaviour
     public event Action<int> OnTimerUpdated;
     public static MainManager Instance { get; private set; }
     
-    [SerializeField] private int level = 1;
+    [SerializeField] private int level = 0;
     [SerializeField] private int levelTimeSeconds = 30;
 
     private Coroutine _levelTimerCoroutine;

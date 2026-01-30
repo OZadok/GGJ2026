@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class NpcScript : MonoBehaviour
 {
-    [SerializeField] private Group _group;
+    private Group _group;
 
     public void Init(SpawnPoint spawnPoint, Group group)
     {
-        //update sprtie to correct rotation
-        //set wearables
-        //set items
+        _group = group;
         StartCoroutine(DoActions());
     }
 
