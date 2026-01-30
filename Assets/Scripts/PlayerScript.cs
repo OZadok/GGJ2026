@@ -45,6 +45,8 @@ public class PlayerScript : MonoBehaviour
             {
                 _zone.AlertNpcs(true);
                 startTime = Time.time;
+                _action1 = false;
+                _action2 = false;
                 continue;
             }
             else if (_action1 || _action2)
@@ -52,6 +54,8 @@ public class PlayerScript : MonoBehaviour
                 // incorrect action
                 _zone.AlertNpcs(false);
                 startTime = Time.time;
+                _action1 = false;
+                _action2 = false;
                 continue;
             }
             
