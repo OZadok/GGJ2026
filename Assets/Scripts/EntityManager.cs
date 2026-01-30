@@ -22,7 +22,7 @@ namespace Core
 
         public NpcScript SpawnNpc(SpawnPoint point, Group group)
         {
-            var entity = Instantiate(npcPrefab, point.spawnPoint.position, Quaternion.identity); 
+            var entity = Instantiate(npcPrefab, point.spawnPoint); 
             var npcScript = entity.GetComponent<NpcScript>();
             npcScript.Init(point, group);
             EquipmentAnchors anchors = entity.GetComponent<EquipmentAnchors>();
