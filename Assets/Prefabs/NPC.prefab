@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3334467362067530052, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       propertyPath: m_Name
-      value: Entity
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 4257139213469184815, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,5 +55,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3334467362067530052, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3503736402488774937}
   m_SourcePrefab: {fileID: 100100000, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+--- !u!1 &791782054992412899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3334467362067530052, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+  m_PrefabInstance: {fileID: 2646588205380485543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3503736402488774937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791782054992412899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9fb479fe3e3fe408c741923e5f794a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NpcScript
+  _group: {fileID: 0}
