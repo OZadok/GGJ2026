@@ -1,4 +1,5 @@
 using System.Collections;
+using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,6 +32,8 @@ public class PlayerScript : MonoBehaviour
         {
             StartCoroutine(WaitForAction());
         }
+
+        Messenger.Default.Publish(new PlayerZoneChangeEvent(zone));
     }
 
     private IEnumerator WaitForAction()
