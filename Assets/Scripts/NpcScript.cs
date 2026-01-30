@@ -6,13 +6,9 @@ public class NpcScript : MonoBehaviour
 {
     [SerializeField] private Group _group;
 
-    private void Start()
+    public void Init(SpawnPoint spawnPoint, Group group)
     {
-        Init();
-    }
-
-    private void Init()
-    {
+        //update sprtie to correct rotation
         //set wearables
         //set items
         StartCoroutine(DoActions());

@@ -23,7 +23,7 @@ namespace Core
         public void SpawnNpc(SpawnPoint point, Group group)
         {
             var entity = Instantiate(npcPrefab, point.spawnPoint.position, Quaternion.identity); 
-            //entit.updatediction
+            entity.GetComponent<NpcScript>().Init(point, group);
         }
     }
 }
