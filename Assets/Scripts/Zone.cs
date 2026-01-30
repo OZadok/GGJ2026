@@ -9,7 +9,7 @@ public class Zone : MonoBehaviour
     //List<NPCScript> npcs;
     public void Init(ZoneData zoneData)
     {
-        if (spawnPoints.Count > zoneData.npcGroups.Count)
+        if (spawnPoints.Count < zoneData.npcGroups.Count)
         {
             Debug.LogError($"not enough spawnpoints for groups for zone data {zoneData.name}");
             return;
@@ -18,7 +18,7 @@ public class Zone : MonoBehaviour
         transform.position = zoneData.zonePostion;
         foreach (Group group in zoneData.npcGroups)
         {
-            // int spawnPointIndex = Random.Range(0, spawnPoints.Count);
+            // int spawnPointIndex = Random.Range(0, spawnPoints.Count); // need to add something to keep track of used sp's
             var point = spawnPoints[i];
             EntityManager.Instance.SpawnNpc(point, group);
             i++;
