@@ -6,17 +6,27 @@ public class PlayerScript : MonoBehaviour
 {
     public List<Wearables> wearables;
     public List<Item> items;
+
+    private Collector _collector;
     
-    private void OnInteract(InputValue value)
+    public void OnInteract(InputAction.CallbackContext context)
     {
-        if (value.isPressed)
+        if (!context.ReadValueAsButton()) return;
+        
+        // check for interaction that can be
+        // e.g. take beer, join zone, etc...
+        if (_collector)
         {
-            // check for interaction that can be
-            // e.g. take beer, join zone, etc...
+            _collector.Collect(this);
         }
     }
 
-    private void JoinZone(/*ZoneData zoneData*/)
+    public void SetCollector(Collector collector)
+    {
+        _collector = collector;
+    }
+
+    private void JoinZone(ZoneData zoneData)
     {
         // put player in the position he needs to be?
         // check for valid group.
