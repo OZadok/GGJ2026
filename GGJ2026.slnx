@@ -1,4 +1,7 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="SuperMaxim.PubSub.csproj" />
+  <Project Path="SuperMaxim.PubSub.Tests.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="SuperMaxim.PubSub.Editor.csproj" />
 </Solution>
