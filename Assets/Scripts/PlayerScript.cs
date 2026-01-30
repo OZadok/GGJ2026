@@ -1,4 +1,5 @@
 using System.Collections;
+using SuperMaxim.Core.Extensions;
 using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -50,6 +51,10 @@ public class PlayerScript : MonoBehaviour
     public void Reset()
     {
         transform.position = _originPosition;
+        foreach (var entityScriptItem in _entityScript.items)
+        {
+            Destroy(entityScriptItem.Value);
+        }
         _entityScript.items.Clear();
         IsSus = true;
     }

@@ -9,7 +9,7 @@ namespace UI
         
         public void Init(int level)
         {
-            text.text = $"Cleared Level {level}";
+            text.text = $"Cleared Level {level + 1}";
             gameObject.SetActive(true);
         }
         
