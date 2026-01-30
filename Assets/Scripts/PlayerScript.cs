@@ -27,8 +27,10 @@ public class PlayerScript : MonoBehaviour
         _zone = zone;
         
         // put player in the position he needs to be?
-        
-        StartCoroutine(WaitForAction());
+        if (_group)
+        {
+            StartCoroutine(WaitForAction());
+        }
     }
 
     private IEnumerator WaitForAction()
