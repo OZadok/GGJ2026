@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using SuperMaxim.Messaging;
 using UnityEngine;
@@ -18,6 +19,23 @@ public class PlayerScript : MonoBehaviour
     private void Awake()
     {
         _entityScript =  GetComponent<EntityScript>();
+    }
+
+    private void OnEnable()
+    {
+        Messenger.Default.Subscribe<PlayerZoneChangeEvent>(OnPlayerZoneChange);
+    }
+
+    private void OnDisable()
+    {
+        Messenger.Default.Unsubscribe<PlayerZoneChangeEvent>(OnPlayerZoneChange);
+    }
+
+    private void OnPlayerZoneChange(PlayerZoneChangeEvent playerZoneChangeEvent)
+    {
+        if (playerZoneChangeEvent.Zone) return;
+        _zone = null;
+        IsSus = true;
     }
 
     public void JoinZone(Zone zone)

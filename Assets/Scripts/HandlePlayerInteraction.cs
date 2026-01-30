@@ -1,4 +1,5 @@
 using System;
+using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -47,6 +48,7 @@ public class HandlePlayerInteraction : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         other.GetComponent<IInteractable>().ToggleInteractButton(false);
+        Messenger.Default.Publish(new PlayerZoneChangeEvent(null));
         _interaction = null;
     }
     
