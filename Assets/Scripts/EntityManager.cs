@@ -20,9 +20,10 @@ namespace Core
             Instance = this;
         }
 
-        public void SpawnNpc(Vector3 position, Group group)
+        public void SpawnNpc(SpawnPoint point, Group group)
         {
-            var entity = Instantiate(npcPrefab, position, Quaternion.identity); 
+            var entity = Instantiate(npcPrefab, point.spawnPoint.position, Quaternion.identity); 
+            //entit.updatediction
         }
     }
 }
