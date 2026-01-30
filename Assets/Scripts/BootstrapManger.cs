@@ -6,7 +6,6 @@ public class BootstrapManger: MonoBehaviour
 {
     public static BootstrapManger Instance { get; private set; }
 
-    [SerializeField] private GameObject zonePrefab;
     [SerializeField] private SpriteRenderer backgroundRenderer;
     [SerializeField] private AudioSource backgroundMusic;
     
@@ -39,7 +38,7 @@ public class BootstrapManger: MonoBehaviour
 
         foreach (var zone in currentLevel.zoneData)
         {
-            var zoneGameObject = Instantiate(zonePrefab, zone.zonePostion, Quaternion.identity);
+            var zoneGameObject = Instantiate(currentLevel.zonePrefab, zone.zonePostion, Quaternion.identity);
             zoneGameObject.GetComponent<Zone>().Init(zone);
         }
 
