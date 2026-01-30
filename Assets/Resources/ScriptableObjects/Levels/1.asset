@@ -16,13 +16,13 @@ MonoBehaviour:
   backgroundMusic: {fileID: 8300000, guid: fc1099cf3021b4b74af839c14be48d84, type: 3}
   zones:
   - zoneData: {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
-    position: {x: 7.6, y: 2}
+    position: {x: -6.9, y: -4.3}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   - zoneData: {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
-    position: {x: 16.3, y: -5.45}
+    position: {x: 3.3, y: -5.45}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   - zoneData: {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
-    position: {x: 15.5, y: 2}
+    position: {x: 14.2, y: -1.52}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   dispenserData:
   - {fileID: 11400000, guid: 7fe14c01551bd724a85cfbd2db52d287, type: 2}
