@@ -16,6 +16,10 @@ public class PlayerScript : MonoBehaviour
 
     private bool _action1, _action2, _action3;
 
+    private bool _actionIsPressed;
+    
+    private Coroutine _waitFOrActionCoroutine;
+
     private void Awake()
     {
         IsSus = true;
@@ -37,6 +41,10 @@ public class PlayerScript : MonoBehaviour
         if (playerZoneChangeEvent.Zone) return;
         _zone = null;
         IsSus = true;
+        if (_waitFOrActionCoroutine != null)
+        {
+            StopCoroutine(_waitFOrActionCoroutine);
+        }
     }
 
     public void JoinZone(Zone zone)
@@ -51,7 +59,7 @@ public class PlayerScript : MonoBehaviour
         // put player in the position he needs to be?
         if (_group)
         {
-            StartCoroutine(WaitForAction());
+            _waitFOrActionCoroutine = StartCoroutine(WaitForAction());
         }
 
         Messenger.Default.Publish(new PlayerZoneChangeEvent(zone));
@@ -59,22 +67,40 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator WaitForAction()
     {
-        var timeToAction = _group.actions[0].maxTime;
+        var action = _group.actions[0];
+        var timeToAction = action.maxTime;
         var startTime = Time.time;
+        
+        yield return new WaitUntil(() => _actionIsPressed || Time.time - startTime > timeToAction);
+        _actionIsPressed = false;
+        if (_action1 && action.type == ActionsType.Drink
+            || _action2 && action.type == ActionsType.PunchTable
+            || _action3 && action.type == ActionsType.Hurray)
+        {
+            _zone.AlertNpcs(true);
+            _action1 = false;
+            _action2 = false;
+            _action3 = false;
+        }
+        
+        startTime = Time.time;
+        
         while (_zone)
         {
             yield return null;
-            if (Time.time - startTime >= _group.actions[0].minTime && 
-                (_action1 && _group.actions[0].type == ActionsType.Drink 
-                 || _action2 && _group.actions[0].type == ActionsType.PunchTable))
+            if (Time.time - startTime >= action.minTime && 
+                (_action1 && action.type == ActionsType.Drink
+                 || _action2 && action.type == ActionsType.PunchTable
+                 || _action3 && action.type == ActionsType.Hurray))
             {
                 _zone.AlertNpcs(true);
                 startTime = Time.time;
                 _action1 = false;
                 _action2 = false;
+                _action3 = false;
                 continue;
             }
-            else if (_action1 || _action2)
+            else if (_action1 || _action2 || _action3)
             {
                 // incorrect action
                 _zone.AlertNpcs(false);
@@ -82,6 +108,7 @@ public class PlayerScript : MonoBehaviour
                 startTime = Time.time;
                 _action1 = false;
                 _action2 = false;
+                _action3 = false;
                 continue;
             }
             
@@ -97,8 +124,9 @@ public class PlayerScript : MonoBehaviour
     public void OnAction1(InputAction.CallbackContext context)
     {
         _action1 = context.performed;
-        if (_action1)
+        if (_action1 && _zone)
         {
+            _actionIsPressed = true;
             _entityScript.DoAction1();
         }
     }
@@ -106,8 +134,9 @@ public class PlayerScript : MonoBehaviour
     public void OnAction2(InputAction.CallbackContext context)
     {
         _action2 = context.performed;
-        if (_action2)
+        if (_action2&& _zone)
         {
+            _actionIsPressed = true;
             _entityScript.DoAction2();
         }
     }
@@ -115,8 +144,9 @@ public class PlayerScript : MonoBehaviour
     public void OnAction3(InputAction.CallbackContext context)
     {
         _action3 = context.performed;
-        if (_action3)
+        if (_action3&& _zone)
         {
+            _actionIsPressed = true;
             _entityScript.DoAction3();
         }
     }
