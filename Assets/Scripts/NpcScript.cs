@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class NpcScript : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer reactionRenderer;
+    [SerializeField] Sprite badReaction;
+    [SerializeField] Sprite goodReaction;
+    [SerializeField] float reactionStayTime = 5f;
     private Group _group;
-    
+
     private EntityScript _entityScript;
 
     private void Awake()
@@ -47,6 +51,15 @@ public class NpcScript : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     public void OnSuspicious(bool isSuspicious)
     {
+        UpdateReacionSprite(isSuspicious);
         Debug.Log($"isSuspicious: {isSuspicious}");
     }
+
+    private void UpdateReacionSprite(bool isSuspicious)
+    {
+        reactionRenderer.gameObject.SetActive(true);
+        reactionRenderer.sprite = isSuspicious ? badReaction : goodReaction;
+        Invoke(nameof(DisableReactionSprite), reactionStayTime);
+    }
+    void DisableReactionSprite() => reactionRenderer.gameObject.SetActive(false);
 }
