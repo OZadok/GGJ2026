@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe12f4086fab5548baf9b9bbefbce04, type: 3}
   m_Name: BeerDrinkers
   m_EditorClassIdentifier: Assembly-CSharp::ZoneData
-  zonePostion: {x: 2, y: 2}
   npcGroups:
   - {fileID: 11400000, guid: e8f08e6a327b2434398f6ba27b087382, type: 2}
   - {fileID: 11400000, guid: e8f08e6a327b2434398f6ba27b087382, type: 2}
