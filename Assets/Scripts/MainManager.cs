@@ -5,13 +5,14 @@ using System.Linq;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
-{
+{ 
     public event Action<int, int> OnTimerUpdated;
     public static MainManager Instance { get; private set; }
 
     [SerializeField] private int level = 0;
     [SerializeField] private int levelTimeSeconds = 30;
-
+    [SerializeField] private PlayerScript playerPrefab;
+    
     private Coroutine _levelTimerCoroutine;
     private List<Group> _groups;
 
@@ -75,10 +76,10 @@ public class MainManager : MonoBehaviour
 
     IEnumerator LevelCountDown()
     {
-        for (int i = levelTimeSeconds; i > 0; i--) // im guessing the 10 here was a placeholder?
+        for (int i = levelTimeSeconds; i > 0; i--)
         {
             OnTimerUpdated?.Invoke(i, levelTimeSeconds);
-            yield return new WaitForSeconds(1f);// because we dont update the number inbetween seconds ui timer will not be smooth
+            yield return new WaitForSeconds(1f);
         }
 
         InvokePursuer();
@@ -86,8 +87,18 @@ public class MainManager : MonoBehaviour
 
     private void InvokePursuer()
     {
-        // check player
-        // if failed game over
-        // if clear, level++, StartLevel
+        if (playerPrefab.IsSus)
+        {
+            GameOver();
+            return;
+        }
+        Debug.Log($"Level {level} cleared!");
+        level++;
+        StartLevel();
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Game Over");
     }
 }

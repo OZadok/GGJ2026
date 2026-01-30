@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
+
+    public bool IsSus { get; private set; }
     private Zone _zone;
     private EntityScript _entityScript;
     
@@ -21,9 +23,9 @@ public class PlayerScript : MonoBehaviour
     public void JoinZone(Zone zone)
     {
         Debug.Log("Join Zone " + zone.name);
-
         
         _group = MainManager.Instance.GetGroupIsBlendingTo(_entityScript);
+        IsSus = false;
         zone.AlertNpcs(_group);
         _zone = zone;
         
@@ -57,6 +59,7 @@ public class PlayerScript : MonoBehaviour
             {
                 // incorrect action
                 _zone.AlertNpcs(false);
+                IsSus = true;
                 startTime = Time.time;
                 _action1 = false;
                 _action2 = false;
@@ -66,6 +69,7 @@ public class PlayerScript : MonoBehaviour
             if (Time.time - startTime > timeToAction)
             {
                 _zone.AlertNpcs(false);
+                IsSus = true;
                 startTime = Time.time;
             }
         }
