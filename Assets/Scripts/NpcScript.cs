@@ -33,11 +33,16 @@ public class NpcScript : MonoBehaviour
                 yield return new WaitForSeconds(waitTime);
                 switch (_group.actions[i].type)
                 {
+                    case ActionsType.None:
+                        break;
                     case ActionsType.Drink:
                         _entityScript.DoAction1();
                         break;
                     case ActionsType.PunchTable:
                         _entityScript.DoAction2();
+                        break;
+                    case ActionsType.Hurray:
+                        _entityScript.DoAction3();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
