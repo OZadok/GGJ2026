@@ -14,6 +14,7 @@ public class Zone : MonoBehaviour, IInteractable
     private List<NpcScript> _npcs = new List<NpcScript>();
 
     HashSet<int> usedSpawnPoints = new HashSet<int>();
+    public Action<bool> OnAlertChanged;
 
     //List<NPCScript> npcs;
     public void Init(ZoneData zoneData, Vector2 positon)
@@ -48,6 +49,7 @@ public class Zone : MonoBehaviour, IInteractable
 
     public void AlertNpcs(bool isBlending)
     {
+        OnAlertChanged?.Invoke(isBlending);
         foreach (var npc in _npcs)
         {
             npc.OnSuspicious(!isBlending);

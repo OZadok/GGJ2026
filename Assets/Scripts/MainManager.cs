@@ -79,25 +79,19 @@ public class MainManager : MonoBehaviour
         level++;
         StartLevel();
     }
-    
+    public void SkipWait()
+    {
+        _timerActive = false;
+        _remainingTime = 0f;
+        InvokePursuer();
+        OnTimerUpdated?.Invoke(0f, levelTimeSeconds);
+    }
     private void StartLevel()
     {
-        if (_levelTimerCoroutine != null)
-            StopCoroutine(_levelTimerCoroutine);
-
         BootstrapManger.Instance.SetupLevel(level);
-        _levelTimerCoroutine = StartCoroutine(LevelCountDown());
-    }
-
-    IEnumerator LevelCountDown()
-    {
-        for (int i = levelTimeSeconds; i > 0; i--)
-        {
-            OnTimerUpdated?.Invoke(i, levelTimeSeconds);
-            yield return new WaitForSeconds(1f);
-        }
-
-        InvokePursuer();
+        _remainingTime = levelTimeSeconds;
+        _timerActive = true;
+        OnTimerUpdated?.Invoke(_remainingTime, levelTimeSeconds);
     }
 
     private void InvokePursuer()
