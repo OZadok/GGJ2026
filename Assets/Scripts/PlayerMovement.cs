@@ -23,6 +23,6 @@ public class PlayerMovement : MonoBehaviour
         var targetMovement = _moveDirection * speed;
         var currentVelocity = _rigidbody2D.linearVelocity;
         var difference = targetMovement - currentVelocity;
-        _rigidbody2D.AddForce(difference);
+        _rigidbody2D.AddForce(difference, ForceMode2D.Impulse);
     }
 }
