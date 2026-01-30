@@ -7,7 +7,6 @@ namespace Core
         public static EntityManager Instance { get; private set; }
 
         [SerializeField] private GameObject playerPrefab;
-        [SerializeField] private GameObject itemPrefab;
         [SerializeField] private GameObject npcPrefab;
         
         private void Awake()
@@ -28,9 +27,14 @@ namespace Core
             EquipmentAnchors anchors = entity.GetComponent<EquipmentAnchors>();
             foreach (var item in group.items)
             {
-                Transform position = anchors.GetItemPosition(item.itemType);
-                Instantiate(itemPrefab,position,false);
+                SpawnItem(anchors, item);
             }
+        }
+
+        private void SpawnItem(EquipmentAnchors anchors, Item item)
+        {
+            Transform position = anchors.GetItemPosition(item.itemType);
+            Instantiate(item.itemPrefab,position,false);
         }
     }
 }
