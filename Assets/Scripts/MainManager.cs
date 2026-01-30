@@ -1,21 +1,21 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UI;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
-{ 
-    public event Action<int, int> OnTimerUpdated;
+{
+    public event Action<float, float> OnTimerUpdated;
     public static MainManager Instance { get; private set; }
 
     [SerializeField] private int level = 0;
-    [SerializeField] private int levelTimeSeconds = 30;
+    [SerializeField] private float levelTimeSeconds = 30f;
     [SerializeField] private PlayerScript playerPrefab;
     [SerializeField] private GameOverPanel gameOverPanel;
     [SerializeField] private LevelClearedPanel levelClearedPanel;
-    private Coroutine _levelTimerCoroutine;
+    private float _remainingTime;
+    private bool _timerActive;
     private List<Group> _groups;
 
     private void Awake()
@@ -38,6 +38,21 @@ public class MainManager : MonoBehaviour
     private void Start()
     {
         StartLevel();
+    }
+
+    private void Update()
+    {
+        if (!_timerActive)
+            return;
+
+        _remainingTime = Mathf.Max(0f, _remainingTime - Time.deltaTime);
+        OnTimerUpdated?.Invoke(_remainingTime, levelTimeSeconds);
+
+        if (_remainingTime <= 0f)
+        {
+            _timerActive = false;
+            InvokePursuer();
+        }
     }
 
     public Group GetGroupIsBlendingTo(EntityScript playerEntity)
@@ -88,8 +103,6 @@ public class MainManager : MonoBehaviour
     }
     private void StartLevel()
     {
-        if (_levelTimerCoroutine != null)
-            StopCoroutine(_levelTimerCoroutine);
 
         playerPrefab.Reset();
         BootstrapManger.Instance.SetupLevel(level);
