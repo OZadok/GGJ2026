@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using UnityEngine;
 
 public class MainManager : MonoBehaviour
@@ -12,7 +13,8 @@ public class MainManager : MonoBehaviour
     [SerializeField] private int level = 0;
     [SerializeField] private int levelTimeSeconds = 30;
     [SerializeField] private PlayerScript playerPrefab;
-    
+    [SerializeField] private GameOverPanel gameOverPanel;
+    [SerializeField] private LevelClearedPanel levelClearedPanel;
     private Coroutine _levelTimerCoroutine;
     private List<Group> _groups;
 
@@ -65,6 +67,19 @@ public class MainManager : MonoBehaviour
         return null;
     }
 
+    public void Reset()
+    {
+        level = 0;
+        StartLevel();
+    }
+
+    public void NextLevel()
+    {
+        Debug.Log($"Level {level} cleared!");
+        level++;
+        StartLevel();
+    }
+    
     private void StartLevel()
     {
         if (_levelTimerCoroutine != null)
@@ -89,16 +104,10 @@ public class MainManager : MonoBehaviour
     {
         if (playerPrefab.IsSus)
         {
-            GameOver();
+            gameOverPanel.gameObject.SetActive(true);
             return;
         }
-        Debug.Log($"Level {level} cleared!");
-        level++;
-        StartLevel();
-    }
 
-    private void GameOver()
-    {
-        Debug.Log("Game Over");
+        levelClearedPanel.Init(level);
     }
 }
