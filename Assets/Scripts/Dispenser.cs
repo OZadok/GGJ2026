@@ -1,13 +1,17 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Dispenser : MonoBehaviour, IInteractable
-{ 
-    [SerializeField] private Item item;
+{
+    private Item item;
     [SerializeField] private GameObject interactButtonView;
 
     public static event Action<Item> OnItemCollected;
+
+    public void Init(DispenserData dispenserData)
+    {
+        item = dispenserData.item;
+    }
 
     private void Start()
     {

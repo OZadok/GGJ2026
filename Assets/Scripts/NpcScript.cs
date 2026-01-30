@@ -5,6 +5,13 @@ using UnityEngine;
 public class NpcScript : MonoBehaviour
 {
     private Group _group;
+    
+    private EntityScript _entityScript;
+
+    private void Awake()
+    {
+        _entityScript = GetComponent<EntityScript>();
+    }
 
     public void Init(SpawnPoint spawnPoint, Group group)
     {
@@ -20,13 +27,24 @@ public class NpcScript : MonoBehaviour
             {
                 var waitTime = UnityEngine.Random.Range(_group.actions[i].minTime, _group.actions[i].maxTime);
                 yield return new WaitForSeconds(waitTime);
-                //do action from type - _group.actions[i].type;
+                switch (_group.actions[i].type)
+                {
+                    case ActionsType.Drink:
+                        _entityScript.DoAction1();
+                        break;
+                    case ActionsType.PunchTable:
+                        _entityScript.DoAction2();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
             yield return null;
         }
         // ReSharper disable once IteratorNeverReturns
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void OnSuspicious(bool isSuspicious)
     {
         Debug.Log($"isSuspicious: {isSuspicious}");

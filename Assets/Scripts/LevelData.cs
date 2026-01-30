@@ -6,8 +6,9 @@ public class LevelData : ScriptableObject
 {
     public Sprite bgImage;
     public AudioClip backgroundMusic;
-    public Zone zonePrefab;
+    public GameObject zonePrefab;
     public List<ZoneData> zoneData;
+public List<DispenserData> dispenserData;
     
 
 }

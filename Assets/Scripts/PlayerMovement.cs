@@ -4,15 +4,25 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector3 _moveDirection;
+    [SerializeField] private float speed;
+    private Vector2 _moveDirection;
+    private Rigidbody2D _rigidbody2D;
+
+    private void Awake()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
-        var moveDirection2D = context.ReadValue<Vector2>();
-        _moveDirection = new Vector3(moveDirection2D.x, moveDirection2D.y, 0);
+        _moveDirection = context.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
-        transform.Translate(_moveDirection * Time.deltaTime);
+        var targetMovement = _moveDirection * speed;
+        var currentVelocity = _rigidbody2D.linearVelocity;
+        var difference = targetMovement - currentVelocity;
+        _rigidbody2D.AddForce(difference, ForceMode2D.Impulse);
     }
 }

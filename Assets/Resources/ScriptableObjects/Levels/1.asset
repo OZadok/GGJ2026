@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d542e1be8a23244a71172ed09f3e42, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  bgImage: {fileID: 0}
+  bgImage: {fileID: 1286810511635572827, guid: a33ccbd6e7942c34786b7d740d4c1359, type: 3}
   backgroundMusic: {fileID: 0}
-  zonePrefab: {fileID: 0}
+  zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   zoneData:
   - {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
+  dispenserData:
+  - {fileID: 11400000, guid: 7fe14c01551bd724a85cfbd2db52d287, type: 2}
