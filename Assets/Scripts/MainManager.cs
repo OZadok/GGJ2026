@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MainManager: MonoBehaviour
+public class MainManager : MonoBehaviour
 {
-    public event Action<int> OnTimerUpdated;
+    public event Action<int, int> OnTimerUpdated;
     public static MainManager Instance { get; private set; }
-    
+
     [SerializeField] private int level = 0;
     [SerializeField] private int levelTimeSeconds = 30;
 
@@ -26,7 +26,7 @@ public class MainManager: MonoBehaviour
         Instance = this;
         Initialize();
     }
-    
+
     private void Initialize()
     {
         _groups = Resources.LoadAll<Group>("ScriptableObjects/Groups").ToList();
@@ -63,22 +63,22 @@ public class MainManager: MonoBehaviour
         }
         return null;
     }
-    
+
     private void StartLevel()
     {
         if (_levelTimerCoroutine != null)
             StopCoroutine(_levelTimerCoroutine);
 
         BootstrapManger.Instance.SetupLevel(level);
-            _levelTimerCoroutine = StartCoroutine(LevelCountDown());
+        _levelTimerCoroutine = StartCoroutine(LevelCountDown());
     }
-    
+
     IEnumerator LevelCountDown()
     {
-        for (int i = 10; i > 0; i--)
+        for (int i = levelTimeSeconds; i > 0; i--) // im guessing the 10 here was a placeholder?
         {
-            OnTimerUpdated?.Invoke(i);
-            yield return new WaitForSeconds(1f);
+            OnTimerUpdated?.Invoke(i, levelTimeSeconds);
+            yield return new WaitForSeconds(1f);// because we dont update the number inbetween seconds ui timer will not be smooth
         }
 
         InvokePursuer();
