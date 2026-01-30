@@ -42,6 +42,12 @@ public class BootstrapManger: MonoBehaviour
             var zoneGameObject = Instantiate(zonePrefab, zone.zonePostion, Quaternion.identity);
             zoneGameObject.GetComponent<Zone>().Init(zone);
         }
+
+        foreach (var dispenserData in currentLevel.dispenserData)
+        {
+            var dispenserGameObject = Instantiate(dispenserData.prefab, dispenserData.position, Quaternion.identity);
+            dispenserGameObject.GetComponent<Dispenser>().Init(dispenserData);
+        }
     }
 
     private void Initialize()
