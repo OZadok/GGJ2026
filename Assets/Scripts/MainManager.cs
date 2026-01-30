@@ -37,7 +37,7 @@ public class MainManager: MonoBehaviour
         StartLevel();
     }
 
-    public bool IsBlendingToGroup(EntityScript playerEntity)
+    public Group GetGroupIsBlendingTo(EntityScript playerEntity)
     {
         foreach (var group in _groups)
         {
@@ -59,9 +59,9 @@ public class MainManager: MonoBehaviour
             {
                 continue;
             }
-            return true;
+            return group;
         }
-        return false;
+        return null;
     }
     
     private void StartLevel()

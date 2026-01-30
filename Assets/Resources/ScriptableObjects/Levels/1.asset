@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d542e1be8a23244a71172ed09f3e42, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  bgImage: {fileID: 0}
+  bgImage: {fileID: 1286810511635572827, guid: a33ccbd6e7942c34786b7d740d4c1359, type: 3}
   backgroundMusic: {fileID: 0}
   zonePrefab: {fileID: 0}
   zoneData:

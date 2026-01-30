@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Group
   items:
   - {fileID: 11400000, guid: 7051bd2a2f1c3af46a492835a8b2dc8c, type: 2}
-  actions: []
+  actions:
+  - type: 1
+    minTime: 4
+    maxTime: 7

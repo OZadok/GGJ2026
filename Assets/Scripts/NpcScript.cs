@@ -27,6 +27,7 @@ public class NpcScript : MonoBehaviour
         // ReSharper disable once IteratorNeverReturns
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void OnSuspicious(bool isSuspicious)
     {
         Debug.Log($"isSuspicious: {isSuspicious}");
