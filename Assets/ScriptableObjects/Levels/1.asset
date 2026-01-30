@@ -15,4 +15,5 @@ MonoBehaviour:
   bgImage: {fileID: 0}
   backgroundMusic: {fileID: 0}
   zonePrefab: {fileID: 0}
-  zoneData: []
+  zoneData:
+  - {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
