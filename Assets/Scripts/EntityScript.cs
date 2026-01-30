@@ -33,13 +33,13 @@ public class EntityScript : MonoBehaviour
     
     public void DoAction1()
     {
-        Debug.Log($"{name} did action 1");
+//        Debug.Log($"{name} did action 1");
         _animator.SetTrigger(Action1);
     }
 
     public void DoAction2()
     {
-        Debug.Log($"{name} did action 2");
+    //    Debug.Log($"{name} did action 2");
         _animator.SetTrigger(Action2);
     }
     

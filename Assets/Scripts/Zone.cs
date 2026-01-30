@@ -71,6 +71,7 @@ public class Zone : MonoBehaviour, IInteractable
     {
         foreach (var item in spawnPoints)
         {
+            if (item.spawnPoint == null) continue;
             Gizmos.DrawWireSphere(item.spawnPoint.position, 0.5f);
         }
     }
