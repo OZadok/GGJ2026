@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b72e238d81365469b86775443b2a63, type: 3}
   m_Name: DispenserData 1
   m_EditorClassIdentifier: Assembly-CSharp::DispenserData
-  position: {x: 0, y: 0}
-  prefab: {fileID: 0}
-  item: {fileID: 0}
+  position: {x: -5, y: -2.5}
+  prefab: {fileID: 2310187707453425037, guid: 0c104dafa492e3e40876256b0845b8aa, type: 3}
+  item: {fileID: 11400000, guid: 7051bd2a2f1c3af46a492835a8b2dc8c, type: 2}
