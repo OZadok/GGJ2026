@@ -136,7 +136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainManager
   level: 0
-  levelTimeSeconds: 30
   playerPrefab: {fileID: 0}
   gameOverPanel: {fileID: 5722474642295070324}
   levelClearedPanel: {fileID: 2445062562761191132}
