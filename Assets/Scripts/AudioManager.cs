@@ -66,6 +66,13 @@ public class AudioManager : MonoBehaviour
     
     private void OnLevelEnded(LevelEndEvent obj)
     {
-        click.Play();
+        if (obj.IsCleared)
+        {
+            clearLevel.Play();
+        }
+        else
+        {
+            levelFailed.Play();
+        }
     }
 }
