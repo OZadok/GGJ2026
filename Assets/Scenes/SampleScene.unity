@@ -524,6 +524,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1602161793535639080, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
+      propertyPath: levelData
+      value: 
+      objectReference: {fileID: 11400000, guid: 072c345beb0e1473e813ae187044a1cd, type: 2}
     - target: {fileID: 3445246279975235526, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
       propertyPath: backgroundRenderer
       value: 
@@ -570,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5754448745096540699, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.81249
+      value: -5.96
       objectReference: {fileID: 0}
     - target: {fileID: 5754448745096540699, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -639,10 +643,6 @@ PrefabInstance:
     - target: {fileID: 6224088465714415656, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7246842463011620292, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
-      propertyPath: m_Value
-      value: 51.5
       objectReference: {fileID: 0}
     - target: {fileID: 8121829119651142101, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
       propertyPath: m_SizeDelta.y
