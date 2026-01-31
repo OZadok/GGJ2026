@@ -7,7 +7,19 @@ using UnityEngine.InputSystem;
 public class PlayerScript : MonoBehaviour
 {
 
-    public bool IsSus { get; private set; }
+    [SerializeField] private int penaltyAmount = 15;
+    [SerializeField] private int successAmount = 20;
+    [SerializeField] private int zoneJoiningBonusAmount = 40;
+    [SerializeField] public int winningThreshold = 70;
+
+    public bool IsSus => BlendingLevel < winningThreshold;
+
+    public int BlendingLevel
+    {
+        get => _blendingLevel;
+        set => _blendingLevel = Mathf.Max(0, value);
+    }
+
     private Zone _zone;
     private EntityScript _entityScript;
     
@@ -19,10 +31,11 @@ public class PlayerScript : MonoBehaviour
     
     private Coroutine _waitFOrActionCoroutine;
     private Vector3 _originPosition;
+
+    private int _blendingLevel;
     
     private void Awake()
     {
-        IsSus = true;
         _entityScript =  GetComponent<EntityScript>();
         _originPosition = transform.position;
     }
@@ -41,7 +54,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (playerZoneChangeEvent.Zone) return;
         _zone = null;
-        IsSus = true;
+        BlendingLevel -= zoneJoiningBonusAmount;
         if (_waitFOrActionCoroutine != null)
         {
             StopCoroutine(_waitFOrActionCoroutine);
@@ -56,7 +69,7 @@ public class PlayerScript : MonoBehaviour
             Destroy(entityScriptItem.Value);
         }
         _entityScript.items.Clear();
-        IsSus = true;
+        BlendingLevel = 0;
     }
     
     public void JoinZone(Zone zone)
@@ -64,7 +77,7 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Join Zone " + zone.name);
         
         _group = MainManager.Instance.GetGroupIsBlendingTo(_entityScript);
-        IsSus = !_group || _group.actions.Count > 0;
+        BlendingLevel += zoneJoiningBonusAmount;
         zone.AlertNpcs(_group);
         _zone = zone;
         
@@ -90,7 +103,7 @@ public class PlayerScript : MonoBehaviour
             || _action3 && action.type == ActionsType.Hurray)
         {
             _zone.AlertNpcs(true);
-            IsSus = false;
+            BlendingLevel += successAmount;
             _action1 = false;
             _action2 = false;
             _action3 = false;
@@ -107,7 +120,7 @@ public class PlayerScript : MonoBehaviour
                  || _action3 && action.type == ActionsType.Hurray))
             {
                 _zone.AlertNpcs(true);
-                IsSus = false;
+                BlendingLevel += successAmount;
                 startTime = Time.time;
                 _action1 = false;
                 _action2 = false;
@@ -118,7 +131,7 @@ public class PlayerScript : MonoBehaviour
             {
                 // incorrect action
                 _zone.AlertNpcs(false);
-                IsSus = true;
+                BlendingLevel -= penaltyAmount;
                 startTime = Time.time;
                 _action1 = false;
                 _action2 = false;
@@ -129,7 +142,7 @@ public class PlayerScript : MonoBehaviour
             if (Time.time - startTime > timeToAction)
             {
                 _zone.AlertNpcs(false);
-                IsSus = true;
+                BlendingLevel -= penaltyAmount;
                 startTime = Time.time;
             }
         }
