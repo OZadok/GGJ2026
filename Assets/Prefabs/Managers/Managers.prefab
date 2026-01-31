@@ -2758,11 +2758,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   beerDrinking: {fileID: 11400000, guid: 5662b33469a159d47ab0136569d50fda, type: 2}
-  punchTable: {fileID: 11400000, guid: 5662b33469a159d47ab0136569d50fda, type: 2}
-  hurray: {fileID: 0}
-  npcSuspicious: {fileID: 0}
-  npcNotSuspicious: {fileID: 0}
-  click: {fileID: 0}
+  punchTable: {fileID: 11400000, guid: 21f1cd7e5f2be23458e4777afe1b9f60, type: 2}
+  hurray: {fileID: 11400000, guid: cb0e3bff25e88c4478400cbcb0318672, type: 2}
+  npcSuspicious: {fileID: 11400000, guid: a1d80a5c9b1cc6e4b950036bfb937759, type: 2}
+  npcNotSuspicious: {fileID: 11400000, guid: de694d0dfbd72294faa315b331034797, type: 2}
+  click: {fileID: 11400000, guid: 1ead754f6f27e8f47960268a9e6eae07, type: 2}
+  levelFailed: {fileID: 11400000, guid: 6674b148576474c439e44faa903f92df, type: 2}
+  clearLevel: {fileID: 11400000, guid: 1d05ca7f18862614d9cb9717a8426db3, type: 2}
 --- !u!1001 &349294416837415098
 PrefabInstance:
   m_ObjectHideFlags: 0
