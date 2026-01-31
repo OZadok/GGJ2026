@@ -60,6 +60,10 @@ public class PlayerScript : MonoBehaviour
             StopCoroutine(_waitFOrActionCoroutine);
         }
     }
+    public Zone GetCurrentZone()
+    {
+        return _zone;
+    }
 
     public void Reset()
     {
@@ -75,11 +79,11 @@ public class PlayerScript : MonoBehaviour
     public void JoinZone(Zone zone)
     {
         Debug.Log("Join Zone " + zone.name);
+        _zone = zone;
         
         _group = MainManager.Instance.GetGroupIsBlendingTo(_entityScript);
         BlendingLevel += zoneJoiningBonusAmount;
         zone.AlertNpcs(_group);
-        _zone = zone;
         
         // put player in the position he needs to be?
         if (_group && _group.actions.Count > 0)
