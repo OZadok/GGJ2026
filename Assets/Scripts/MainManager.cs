@@ -84,13 +84,11 @@ public class MainManager : MonoBehaviour
 
     public void Reset()
     {
-        level = 0;
         StartLevel();
     }
 
     public void NextLevel()
     {
-        Debug.Log($"Level {level} cleared!");
         level++;
         StartLevel();
     }

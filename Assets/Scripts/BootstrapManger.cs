@@ -10,7 +10,7 @@ public class BootstrapManger: MonoBehaviour
     [SerializeField] private AudioSource backgroundMusic;
     
     private List<LevelData> _levels;
-    private List<GameObject> _zoneGameObjects = new();
+    private List<GameObject> _gameObjects = new();
     
     private void Awake()
     {
@@ -32,8 +32,8 @@ public class BootstrapManger: MonoBehaviour
             return;
         }
         
-        _zoneGameObjects.ForEach(Destroy);
-        _zoneGameObjects.Clear();
+        _gameObjects.ForEach(Destroy);
+        _gameObjects.Clear();
         
         var currentLevel = _levels[level];
         
@@ -44,13 +44,14 @@ public class BootstrapManger: MonoBehaviour
         {
             var zoneGameObject = Instantiate(zone.zonePrefab, zone.position, Quaternion.identity);
             zoneGameObject.GetComponent<Zone>().Init(zone.zoneData, zone.position);
-            _zoneGameObjects.Add(zoneGameObject);
+            _gameObjects.Add(zoneGameObject);
         }
 
         foreach (var dispenserData in currentLevel.dispenserData)
         {
             var dispenserGameObject = Instantiate(dispenserData.prefab, dispenserData.position, Quaternion.identity);
             dispenserGameObject.GetComponent<Dispenser>().Init(dispenserData);
+            _gameObjects.Add(dispenserGameObject);
         }
     }
 
