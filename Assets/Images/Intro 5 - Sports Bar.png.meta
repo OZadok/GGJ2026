@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 0cae419cbbcf6f049a9473d526615b4d
+guid: 2f207e6e439e23549b7e52e2d30042b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1421564159758971409
-    second: Intro 3 - Agent_0
-  - first:
-      213: 2312652929583378023
-    second: Intro 3 - Agent_1
-  - first:
-      213: -8028336497342502664
-    second: Intro 3 - Agent_2
-  - first:
-      213: 1061929058527609172
-    second: Intro 3 - Agent_3
+      213: 1816250809326366091
+    second: Intro 5 - Sports Bar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Intro 3 - Agent_0
+      name: Intro 5 - Sports Bar_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 731
+        width: 1920
         height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1123cdf42196ab310800000000000000
-      internalID: 1421564159758971409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Intro 3 - Agent_1
-      rect:
-        serializedVersion: 2
-        x: 726
-        y: 285
-        width: 53
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 76e65942691381020800000000000000
-      internalID: 2312652929583378023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Intro 3 - Agent_2
-      rect:
-        serializedVersion: 2
-        x: 763
-        y: 316
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f8a89add7e959090800000000000000
-      internalID: -8028336497342502664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Intro 3 - Agent_3
-      rect:
-        serializedVersion: 2
-        x: 784
-        y: 338
-        width: 25
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45104363adabcbe00800000000000000
-      internalID: 1061929058527609172
+      spriteID: b8de9e8fc7e943910800000000000000
+      internalID: 1816250809326366091
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Intro 3 - Agent_0: 1421564159758971409
-      Intro 3 - Agent_1: 2312652929583378023
-      Intro 3 - Agent_2: -8028336497342502664
-      Intro 3 - Agent_3: 1061929058527609172
+      Intro 5 - Sports Bar_0: 1816250809326366091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
