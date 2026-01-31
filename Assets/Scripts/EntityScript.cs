@@ -6,6 +6,8 @@ public class EntityScript : MonoBehaviour
     private static readonly int Action1 = Animator.StringToHash("Action1");
     private static readonly int Action2 = Animator.StringToHash("Action2");
     private static readonly int Action3 = Animator.StringToHash("Action3");
+    private static readonly int Walking = Animator.StringToHash("Action3");
+    
     private EquipmentAnchors _equipmentAnchors;
     public Dictionary<ItemType, GameObject> items =  new Dictionary<ItemType, GameObject>();
     
@@ -44,5 +46,10 @@ public class EntityScript : MonoBehaviour
     public void DoAction3()
     {
         _animator.SetTrigger(Action3);
+    }
+
+    public void SetWalking(bool isWalking)
+    {
+        _animator.SetBool(Walking, isWalking);
     }
 }
