@@ -14,6 +14,8 @@ public class PlayerScript : MonoBehaviour
 
     public bool IsSus => BlendingLevel < winningThreshold;
 
+    public bool HaveBeer => _entityScript.items.ContainsKey(ItemType.Hand);
+
     public int BlendingLevel
     {
         get => _blendingLevel;
@@ -155,7 +157,7 @@ public class PlayerScript : MonoBehaviour
     public void OnAction1(InputAction.CallbackContext context)
     {
         _action1 = context.performed;
-        if (_action1 && _zone)
+        if (_action1 && _zone && HaveBeer)
         {
             _actionIsPressed = true;
             _entityScript.DoAction1();
