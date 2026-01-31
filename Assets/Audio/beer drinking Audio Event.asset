@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22143c2e90167f241810fb1325f638e8, type: 3}
   m_Name: beer drinking Audio Event
   m_EditorClassIdentifier: Assembly-CSharp::SimpleAudioEvent
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: e9a204ad2111c4e468b1b11c263e40ef, type: 3}
   volume:
     minValue: 0.95
     maxValue: 1
