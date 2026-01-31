@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelData", menuName = "LevelData", order = 0)]
 public class LevelData : ScriptableObject
 {
+    public float levelTime;
     public Sprite bgImage;
     public AudioClip backgroundMusic;
     public List<ZonePlacement> zones;

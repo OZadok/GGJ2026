@@ -15,4 +15,6 @@ MonoBehaviour:
   baseItemPrefab: {fileID: 402848062084996371, guid: 368c75bdd0e2eb641a659d276c38f9cb, type: 3}
   itemSprites:
   - {fileID: -6735212508183825979, guid: cd4a87b060e1b364c91d7400abba160a, type: 3}
-  itemType: 1
+  spawnPointScale: {x: 1, y: 1, z: 1}
+  spawnPointOffset: {x: -0.46, y: 1.74, z: 0}
+  itemType: 0

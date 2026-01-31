@@ -127,22 +127,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 966836869862214593, guid: 5f2f6dd1a74b6da409a72196cb7aac3e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 966836869862214593, guid: 5f2f6dd1a74b6da409a72196cb7aac3e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 966836869862214593, guid: 5f2f6dd1a74b6da409a72196cb7aac3e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1502827903688540477, guid: 5f2f6dd1a74b6da409a72196cb7aac3e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4b8b97df5574c024fa76129bd88c4bec, type: 3}
     - target: {fileID: 2395202799866710406, guid: 5f2f6dd1a74b6da409a72196cb7aac3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.44
@@ -517,6 +501,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1506695227732910396, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570957409458661748, guid: 265a29adb0d79664686b89672f65f7bc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}

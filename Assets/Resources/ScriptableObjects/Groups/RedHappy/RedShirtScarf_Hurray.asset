@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c7d7555e8e50d948a96daec73ee0d6e, type: 3}
-  m_Name: RedShirt_PunchTable
+  m_Name: RedShirtScarf_Hurray
   m_EditorClassIdentifier: Assembly-CSharp::Group
   items:
+  - {fileID: 11400000, guid: ea4d6d75ffbde2c4783a39be9023efe6, type: 2}
   - {fileID: 11400000, guid: f1ffae1d5962d41cc921956b59b4ea11, type: 2}
   actions:
-  - type: 2
-    minTime: 5
+  - type: 3
+    minTime: 3
     maxTime: 8

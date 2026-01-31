@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c7d7555e8e50d948a96daec73ee0d6e, type: 3}
-  m_Name: BlueScarf_Hurray
+  m_Name: Beer_Drink
   m_EditorClassIdentifier: Assembly-CSharp::Group
   items:
-  - {fileID: 11400000, guid: f4dd33db35a384b41a9b15620348bebe, type: 2}
+  - {fileID: 11400000, guid: 7051bd2a2f1c3af46a492835a8b2dc8c, type: 2}
   actions:
-  - type: 3
-    minTime: 5
-    maxTime: 8
+  - type: 1
+    minTime: 3
+    maxTime: 7

@@ -12,7 +12,9 @@ public class Dispenser : MonoBehaviour, IInteractable
     public void Init(DispenserData dispenserData)
     {
         item = dispenserData.item;
+        itemSpawnPoint.localScale = item.spawnPointScale;
         var go = Instantiate(item.baseItemPrefab, itemSpawnPoint);
+        go.transform.position += item.spawnPointOffset;
         go.GetComponent<SpriteRenderer>().sprite = item.itemSprites[Random.Range(0,item.itemSprites.Count)];
     }
 

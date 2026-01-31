@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d542e1be8a23244a71172ed09f3e42, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  levelTime: 40
   bgImage: {fileID: 1286810511635572827, guid: a33ccbd6e7942c34786b7d740d4c1359, type: 3}
   backgroundMusic: {fileID: 8300000, guid: fc1099cf3021b4b74af839c14be48d84, type: 3}
   zones:
   - zoneData: {fileID: 11400000, guid: fe7189306e7ca4869bf80c5186052cfd, type: 2}
-    position: {x: 2.76, y: -4.04}
+    position: {x: 2.6, y: -6.35}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
-  - zoneData: {fileID: 11400000, guid: 5f44fe4db70114b909669575d6efbc39, type: 2}
-    position: {x: 11.8, y: -5.24}
+  - zoneData: {fileID: 11400000, guid: fcee0f23764ad42aea7a254454a56a72, type: 2}
+    position: {x: 11.8, y: -5.5}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
-  - zoneData: {fileID: 11400000, guid: 5f44fe4db70114b909669575d6efbc39, type: 2}
-    position: {x: -13.9, y: -3.53}
+  - zoneData: {fileID: 11400000, guid: e86fcd89262f435439eeac4d5c6f7d48, type: 2}
+    position: {x: -12.3, y: -6.1}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   dispenserData:
   - {fileID: 11400000, guid: 7fe14c01551bd724a85cfbd2db52d287, type: 2}
-  - {fileID: 11400000, guid: 7fcfeb34f60ce4910adf33e20bc4a772, type: 2}
+  - {fileID: 11400000, guid: 784b0b2761ad14e33b07d759a4032c27, type: 2}
+  - {fileID: 11400000, guid: 9293cd4d31dc94d2b8c0da6652abf3dc, type: 2}

@@ -9,12 +9,11 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance { get; private set; }
 
     [SerializeField] private int level = 0;
-    [SerializeField] private float levelTimeSeconds = 30f;
     [SerializeField] private PlayerScript playerPrefab;
     [SerializeField] private GameOverPanel gameOverPanel;
     [SerializeField] private LevelClearedPanel levelClearedPanel;
     public float RemainingTime => _remainingTime;
-    public float LevelTimeSeconds => levelTimeSeconds;
+    public float LevelTimeSeconds => CurrentLevelData.levelTime;
 
     private LevelData CurrentLevelData => _levels[level];
 
@@ -115,7 +114,7 @@ public class MainManager : MonoBehaviour
     {
         playerPrefab.Reset();
         BootstrapManger.Instance.SetupLevel(CurrentLevelData);
-        _remainingTime = levelTimeSeconds;
+        _remainingTime = CurrentLevelData.levelTime;
         _timerActive = true;
     }
 

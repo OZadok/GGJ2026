@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbe12f4086fab5548baf9b9bbefbce04, type: 3}
-  m_Name: BarTable 3
+  m_Name: RedTeam_Mid_Angry
   m_EditorClassIdentifier: Assembly-CSharp::ZoneData
-  zonePostion: {x: -2, y: -2}
   npcGroups:
   - {fileID: 11400000, guid: 308128b84f90d884eaefef411657c651, type: 2}
-  - {fileID: 11400000, guid: e8f08e6a327b2434398f6ba27b087382, type: 2}
-  - {fileID: 11400000, guid: e8f08e6a327b2434398f6ba27b087382, type: 2}
-  - {fileID: 11400000, guid: e8f08e6a327b2434398f6ba27b087382, type: 2}
+  - {fileID: 11400000, guid: 308128b84f90d884eaefef411657c651, type: 2}
+  - {fileID: 11400000, guid: c0f38655661912242ace675dbda7078d, type: 2}
+  - {fileID: 11400000, guid: c0f38655661912242ace675dbda7078d, type: 2}
+  - {fileID: 11400000, guid: c0f38655661912242ace675dbda7078d, type: 2}

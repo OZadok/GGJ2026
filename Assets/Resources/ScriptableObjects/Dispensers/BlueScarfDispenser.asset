@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b72e238d81365469b86775443b2a63, type: 3}
   m_Name: BlueScarfDispenser
   m_EditorClassIdentifier: Assembly-CSharp::DispenserData
-  position: {x: -8.76, y: -7.89}
+  position: {x: -7.04, y: -3.1}
   prefab: {fileID: 5469423022230399586, guid: 72d93dbe6f4c8864896162479fe21fc8, type: 3}
   item: {fileID: 11400000, guid: f4dd33db35a384b41a9b15620348bebe, type: 2}

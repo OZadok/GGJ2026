@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b72e238d81365469b86775443b2a63, type: 3}
   m_Name: BlueShirtDispenser
   m_EditorClassIdentifier: Assembly-CSharp::DispenserData
-  position: {x: 10.4, y: -4.97}
+  position: {x: 15.8, y: -3.49}
   prefab: {fileID: 5469423022230399586, guid: 72d93dbe6f4c8864896162479fe21fc8, type: 3}
   item: {fileID: 11400000, guid: bbdae87b166287a47a019951c463cc70, type: 2}
