@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,10 +6,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     private Vector2 _moveDirection;
     private Rigidbody2D _rigidbody2D;
-
+    private EntityScript _entityScript;
+    
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _entityScript = GetComponent<EntityScript>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -24,5 +25,7 @@ public class PlayerMovement : MonoBehaviour
         var currentVelocity = _rigidbody2D.linearVelocity;
         var difference = targetMovement - currentVelocity;
         _rigidbody2D.AddForce(difference, ForceMode2D.Impulse);
+
+        _entityScript.SetWalking(_rigidbody2D.linearVelocity != Vector2.zero);
     }
 }
