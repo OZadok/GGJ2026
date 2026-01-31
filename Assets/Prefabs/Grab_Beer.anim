@@ -885,9 +885,9 @@ AnimationClip:
     - time: 0.35
       value: {fileID: 21300000, guid: 72b28c2e474b8bf469ea19a968ee5bea, type: 3}
     - time: 0.41666666
-      value: {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
+      value: {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
     - time: 0.55
-      value: {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
+      value: {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
     attribute: m_Sprite
     path: GFX/Hand_01_R
     classID: 212
@@ -1089,8 +1089,8 @@ AnimationClip:
     - {fileID: 21300000, guid: 72b28c2e474b8bf469ea19a968ee5bea, type: 3}
     - {fileID: 21300000, guid: 72b28c2e474b8bf469ea19a968ee5bea, type: 3}
     - {fileID: 21300000, guid: 72b28c2e474b8bf469ea19a968ee5bea, type: 3}
-    - {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
-    - {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
+    - {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
+    - {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
     - {fileID: 21300000, guid: 7d1e13c510db6b443bc913403d8a7371, type: 3}
     - {fileID: 21300000, guid: 7d1e13c510db6b443bc913403d8a7371, type: 3}
     - {fileID: 21300000, guid: 7d1e13c510db6b443bc913403d8a7371, type: 3}
