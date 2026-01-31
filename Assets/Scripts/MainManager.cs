@@ -16,9 +16,11 @@ public class MainManager : MonoBehaviour
     public float RemainingTime => _remainingTime;
     public float LevelTimeSeconds => levelTimeSeconds;
 
+    private LevelData CurrentLevelData => _levels[level];
+
     private float _remainingTime;
     private bool _timerActive;
-    private List<Group> _groups;
+    private List<LevelData> _levels;
 
     private void Awake()
     {
@@ -34,7 +36,7 @@ public class MainManager : MonoBehaviour
 
     private void Initialize()
     {
-        _groups = Resources.LoadAll<Group>("ScriptableObjects/Groups").ToList();
+        _levels = Resources.LoadAll<LevelData>("ScriptableObjects/Levels").ToList();
     }
 
     private void Start()
@@ -58,7 +60,8 @@ public class MainManager : MonoBehaviour
 
     public Group GetGroupIsBlendingTo(EntityScript playerEntity)
     {
-        foreach (var group in _groups)
+        var existingGroups = GetUniqueGroups(CurrentLevelData);
+        foreach (var group in existingGroups)
         {
             if (group.items.Count != playerEntity.GetItemsCount())
             {
@@ -107,7 +110,7 @@ public class MainManager : MonoBehaviour
     private void StartLevel()
     {
         playerPrefab.Reset();
-        BootstrapManger.Instance.SetupLevel(level);
+        BootstrapManger.Instance.SetupLevel(CurrentLevelData);
         _remainingTime = levelTimeSeconds;
         _timerActive = true;
     }
@@ -123,5 +126,27 @@ public class MainManager : MonoBehaviour
         }
 
         levelClearedPanel.Init(level);
+    }
+    
+    public static List<Group> GetUniqueGroups(LevelData levelData)
+    {
+        var uniqueGroups = new HashSet<Group>();
+
+        if (levelData == null)
+            return new List<Group>();
+
+        foreach (var zonePlacement in levelData.zones)
+        {
+            if (zonePlacement.zoneData == null)
+                continue;
+
+            foreach (var group in zonePlacement.zoneData.npcGroups)
+            {
+                if (group != null)
+                    uniqueGroups.Add(group);
+            }
+        }
+
+        return new List<Group>(uniqueGroups);
     }
 }
