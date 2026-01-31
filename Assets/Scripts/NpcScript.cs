@@ -64,7 +64,7 @@ public class NpcScript : MonoBehaviour
 
     private IEnumerator OnSuspiciousDelay(bool isSuspicious)
     {
-        var delay = Random.Range(0, 0.3f);
+        var delay = Random.Range(0, 0.5f);
         yield return new WaitForSeconds(delay);
         UpdateReacionSprite(isSuspicious);
         Debug.Log($"isSuspicious: {isSuspicious}");

@@ -49,7 +49,7 @@ public class HandlePlayerInteraction : MonoBehaviour
         var interactable = other.GetComponent<IInteractable>();
         interactable.ToggleInteractButton(true);
         _interaction = interactable.Interact;
-        Messenger.Default.Publish(new ClickEvent());
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -62,7 +62,7 @@ public class HandlePlayerInteraction : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.ReadValueAsButton()) return;
-
+        Messenger.Default.Publish(new ClickEvent());
         _interaction?.Invoke();
         _interaction = null;
     }
