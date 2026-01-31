@@ -19,6 +19,6 @@ MonoBehaviour:
     maxValue: 1
   pitch:
     minValue: 0.95
-    maxValue: 1.05
+    maxValue: 1.503202
   spatialBlend: 0
   audioGroup: {fileID: 0}
