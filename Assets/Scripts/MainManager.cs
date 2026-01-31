@@ -60,7 +60,11 @@ public class MainManager : MonoBehaviour
 
     public Group GetGroupIsBlendingTo(EntityScript playerEntity)
     {
-        var existingGroups = GetUniqueGroups(CurrentLevelData);
+        var player = playerEntity.GetComponent<PlayerScript>();
+        Debug.Log(player == null);
+        Debug.Log(player.GetCurrentZone() == null);
+        Debug.Log(player.GetCurrentZone().ZoneData == null);
+        var existingGroups = GetUniqueGroupsInZone(player.GetCurrentZone().ZoneData);
         foreach (var group in existingGroups)
         {
             if (group.items.Count != playerEntity.GetItemsCount())
@@ -127,25 +131,20 @@ public class MainManager : MonoBehaviour
 
         levelClearedPanel.Init(level);
     }
-    
-    public static List<Group> GetUniqueGroups(LevelData levelData)
+
+    public static List<Group> GetUniqueGroupsInZone(ZoneData zoneData)
     {
         var uniqueGroups = new HashSet<Group>();
 
-        if (levelData == null)
+        if (zoneData == null)
             return new List<Group>();
 
-        foreach (var zonePlacement in levelData.zones)
+        foreach (var group in zoneData.npcGroups)
         {
-            if (zonePlacement.zoneData == null)
-                continue;
-
-            foreach (var group in zonePlacement.zoneData.npcGroups)
-            {
-                if (group != null)
-                    uniqueGroups.Add(group);
-            }
+            if (group != null)
+                uniqueGroups.Add(group);
         }
+
 
         return new List<Group>(uniqueGroups);
     }

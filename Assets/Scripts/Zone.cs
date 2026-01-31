@@ -16,9 +16,12 @@ public class Zone : MonoBehaviour, IInteractable
     HashSet<int> usedSpawnPoints = new HashSet<int>();
     public Action<bool> OnAlertChanged;
 
+    public ZoneData ZoneData { get; private set; }
+
     //List<NPCScript> npcs;
     public void Init(ZoneData zoneData, Vector2 positon)
     {
+        this.ZoneData = zoneData;
         if (spawnPoints.Count < zoneData.npcGroups.Count)
         {
             Debug.LogError($"not enough spawnpoints for groups for zone data {zoneData.name}");
