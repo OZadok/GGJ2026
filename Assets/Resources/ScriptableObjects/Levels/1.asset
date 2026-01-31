@@ -16,7 +16,7 @@ MonoBehaviour:
   backgroundMusic: {fileID: 8300000, guid: fc1099cf3021b4b74af839c14be48d84, type: 3}
   zones:
   - zoneData: {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
-    position: {x: -6.9, y: -4.3}
+    position: {x: -7.54, y: -4.96}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   - zoneData: {fileID: 11400000, guid: d372fa57f2bd6454380983e49827a4ed, type: 2}
     position: {x: 3.3, y: -5.45}
