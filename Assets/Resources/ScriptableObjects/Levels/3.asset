@@ -19,7 +19,7 @@ MonoBehaviour:
     position: {x: -1.91, y: -2.33}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   - zoneData: {fileID: 11400000, guid: 5f44fe4db70114b909669575d6efbc39, type: 2}
-    position: {x: 10.67, y: 1.47}
+    position: {x: 10.67, y: -6.58}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   dispenserData:
   - {fileID: 11400000, guid: 7fe14c01551bd724a85cfbd2db52d287, type: 2}

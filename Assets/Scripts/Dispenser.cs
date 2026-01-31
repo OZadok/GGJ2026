@@ -1,16 +1,19 @@
 using System;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 public class Dispenser : MonoBehaviour, IInteractable
 {
-    private Item item;
+    private ItemData item;
+    [SerializeField] Transform itemSpawnPoint;
     [SerializeField] private GameObject interactButtonView;
 
-    public static event Action<Item> OnItemCollected;
+    public static event Action<ItemData> OnItemCollected;
 
     public void Init(DispenserData dispenserData)
     {
         item = dispenserData.item;
+        var go = Instantiate(item.baseItemPrefab, itemSpawnPoint);
+        go.GetComponent<SpriteRenderer>().sprite = item.itemSprites[Random.Range(0,item.itemSprites.Count)];
     }
 
     private void Start()
