@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,11 +17,12 @@ public class EntityScript : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void SetItem(Item item)
+    public void SetItem(ItemData item)
     {
         //set item sprite at the position.
         Transform position = _equipmentAnchors.GetItemPosition(item.itemType);
-        var go = Instantiate(item.itemPrefab ,position,false);
+        var go = Instantiate(item.baseItemPrefab ,position,false);
+        go.GetComponent<SpriteRenderer>().sprite = item.itemSprites[Random.Range(0,item.itemSprites.Count)];
         items[item.itemType] = go;
     }
 

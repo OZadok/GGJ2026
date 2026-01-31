@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Group", menuName = "Group", order = 0)]
 public class Group : ScriptableObject
 {
-    public List<Item> items;
+    public List<ItemData> items;
     public List<Action> actions;
 }
 

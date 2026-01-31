@@ -28,7 +28,7 @@ public class HandlePlayerInteraction : MonoBehaviour
         Zone.OnJoinedToZone -= ZoneOnOnJoinedToZone;
     }
 
-    private void DispenserOnOnItemCollected(Item item)
+    private void DispenserOnOnItemCollected(ItemData item)
     {
         if (_entityScript.items.ContainsKey(item.itemType))
         {

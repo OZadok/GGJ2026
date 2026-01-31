@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80ae8a8cb8be8247abf8ab3a3b74327, type: 3}
   m_Name: Beer
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemPrefab: {fileID: 402848062084996371, guid: 52a7452bd691bf54a9dc2c9187972ac0, type: 3}
+  baseItemPrefab: {fileID: 402848062084996371, guid: 368c75bdd0e2eb641a659d276c38f9cb, type: 3}
+  itemSprites:
+  - {fileID: -6169548335255678735, guid: 92ac5ca01c1cb404e94b0e4feadeef9b, type: 3}
   itemType: 3
