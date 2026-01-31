@@ -166,6 +166,7 @@ public class PlayerScript : MonoBehaviour
         {
             _actionIsPressed = true;
             _entityScript.DoAction2();
+            Messenger.Default.Publish(new PlayerPunchTableEvent());
         }
     }
     
@@ -176,6 +177,7 @@ public class PlayerScript : MonoBehaviour
         {
             _actionIsPressed = true;
             _entityScript.DoAction3();
+            Messenger.Default.Publish(new PlayerHurrayEvent());
         }
     }
 }
