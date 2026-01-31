@@ -591,36 +591,6 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
     flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1.6166667
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_IsActive
-    path: GFX/Hand_01_R/Hand_EquipmentHolder
-    classID: 1
-    script: {fileID: 0}
-    flags: 0
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
@@ -644,11 +614,24 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
+      value: {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
     - time: 1.6
-      value: {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
+      value: {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
     attribute: m_Sprite
     path: GFX/Hand_01_R
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 2d26413940b58f341a78f8e5e5883f2d, type: 3}
+    - time: 0.083333336
+      value: {fileID: 0}
+    - time: 1.35
+      value: {fileID: 21300000, guid: 2d26413940b58f341a78f8e5e5883f2d, type: 3}
+    attribute: m_Sprite
+    path: GFX/Torso/Head_01/EyeMask3
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -723,15 +706,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4246415060
-      attribute: 2086281974
-      script: {fileID: 0}
-      typeID: 1
-      customType: 0
-      isPPtrCurve: 0
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    - serializedVersion: 2
       path: 1322127909
       attribute: 0
       script: {fileID: 0}
@@ -742,6 +716,15 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 2325709516
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3907709401
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -765,8 +748,11 @@ AnimationClip:
     - {fileID: 1175776352997546793, guid: a0de1268051e12d418cf6f62b48525ef, type: 3}
     - {fileID: 21300000, guid: 7d1e13c510db6b443bc913403d8a7371, type: 3}
     - {fileID: 21300000, guid: 7d1e13c510db6b443bc913403d8a7371, type: 3}
-    - {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
-    - {fileID: -4507110872509711192, guid: 2bc53ed6f9d57f544b91866911da4050, type: 3}
+    - {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
+    - {fileID: 21300000, guid: fccdb07b39007fc4ba9d0ac11021821f, type: 3}
+    - {fileID: 21300000, guid: 2d26413940b58f341a78f8e5e5883f2d, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 2d26413940b58f341a78f8e5e5883f2d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -2555,36 +2541,6 @@ AnimationClip:
     classID: 4
     script: {fileID: 0}
     flags: 16
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1.6166667
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_IsActive
-    path: GFX/Hand_01_R/Hand_EquipmentHolder
-    classID: 1
-    script: {fileID: 0}
-    flags: 0
   m_EulerEditorCurves:
   - serializedVersion: 2
     curve:

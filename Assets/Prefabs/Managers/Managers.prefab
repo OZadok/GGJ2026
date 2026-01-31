@@ -470,7 +470,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: -100, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5449949275639308096
 CanvasRenderer:
@@ -1010,6 +1010,10 @@ MonoBehaviour:
   action1: {fileID: 8807698734443596190}
   action2: {fileID: 5023614444971905239}
   action3: {fileID: 1265861524385497438}
+  action1Images:
+  - {fileID: 2262276045108770529}
+  - {fileID: 25362564062563812}
+  - {fileID: 4380990257405081654}
 --- !u!1 &4021154768508854320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,7 +2444,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2475249946547172215
 CanvasRenderer:
@@ -2991,6 +2995,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2915437038827299603, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667732056190541538, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6049893009097750085, guid: 27a8e8d23fc8547d2b31f52c08683336, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3110,6 +3122,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2915437038827299603, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667732056190541538, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2980533951663003023, guid: fc80f41f65e91499190e7d243c2a4124, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3221,11 +3241,48 @@ PrefabInstance:
       propertyPath: m_text
       value: Drink
       objectReference: {fileID: 0}
+    - target: {fileID: 2915437038827299603, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+--- !u!114 &25362564062563812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8958048750386391856, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+  m_PrefabInstance: {fileID: 8938373118714668756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &2262276045108770529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7164737646197346357, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+  m_PrefabInstance: {fileID: 8938373118714668756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807698734443596190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &4380990257405081654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4667732056190541538, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+  m_PrefabInstance: {fileID: 8938373118714668756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &7501513812332258578 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1446150188663260102, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}

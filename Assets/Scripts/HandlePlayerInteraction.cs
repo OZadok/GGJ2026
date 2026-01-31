@@ -28,6 +28,7 @@ public class HandlePlayerInteraction : MonoBehaviour
 
     private void DispenserOnOnItemCollected(ItemData item)
     {
+        _entityScript.TriggerGrab();
         if (_entityScript.items.ContainsKey(item.itemType))
         {
             Destroy(_entityScript.items[item.itemType].gameObject);

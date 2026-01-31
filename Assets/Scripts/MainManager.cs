@@ -9,7 +9,7 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance { get; private set; }
 
     [SerializeField] private int level = 0;
-    [SerializeField] private PlayerScript playerPrefab;
+    public PlayerScript playerPrefab;
     [SerializeField] private GameOverPanel gameOverPanel;
     [SerializeField] private LevelClearedPanel levelClearedPanel;
     public float RemainingTime => _remainingTime;
