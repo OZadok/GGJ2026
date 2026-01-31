@@ -155,6 +155,7 @@ public class PlayerScript : MonoBehaviour
         {
             _actionIsPressed = true;
             _entityScript.DoAction1();
+            Messenger.Default.Publish(new PlayerDrinkingBeerEvent());
         }
     }
     

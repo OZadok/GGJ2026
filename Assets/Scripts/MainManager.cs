@@ -84,13 +84,11 @@ public class MainManager : MonoBehaviour
 
     public void Reset()
     {
-        level = 0;
         StartLevel();
     }
 
     public void NextLevel()
     {
-        Debug.Log($"Level {level} cleared!");
         level++;
         StartLevel();
     }
@@ -102,7 +100,6 @@ public class MainManager : MonoBehaviour
     }
     private void StartLevel()
     {
-
         playerPrefab.Reset();
         BootstrapManger.Instance.SetupLevel(level);
         _remainingTime = levelTimeSeconds;

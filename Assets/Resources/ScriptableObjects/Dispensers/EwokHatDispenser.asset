@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b72e238d81365469b86775443b2a63, type: 3}
+  m_Name: EwokHatDispenser
+  m_EditorClassIdentifier: Assembly-CSharp::DispenserData
+  position: {x: -11.54, y: 0.02}
+  prefab: {fileID: 5469423022230399586, guid: 72d93dbe6f4c8864896162479fe21fc8, type: 3}
+  item: {fileID: 11400000, guid: 3e75385bdb4f54fbd8d13fe0b08a8f8b, type: 2}
