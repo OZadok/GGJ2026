@@ -39,6 +39,7 @@ public class BootstrapManger: MonoBehaviour
         
         backgroundRenderer.sprite = currentLevel.bgImage;
         backgroundMusic.clip = currentLevel.backgroundMusic;
+        backgroundMusic.Play();
 
         foreach (var zone in currentLevel.zones)
         {
