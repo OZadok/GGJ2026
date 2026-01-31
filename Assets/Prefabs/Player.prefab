@@ -8,6 +8,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1076927430180109204, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6784967
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076927430180109204, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076927430180109204, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337574810102069744, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6784967
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337574810102069744, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337574810102069744, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5882353
+      objectReference: {fileID: 0}
     - target: {fileID: 1459588360470236580, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -20,6 +44,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.36274788
       objectReference: {fileID: 0}
+    - target: {fileID: 3110346895045767623, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6784967
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110346895045767623, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110346895045767623, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5882353
+      objectReference: {fileID: 0}
     - target: {fileID: 3334467362067530052, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -27,6 +63,30 @@ PrefabInstance:
     - target: {fileID: 3334467362067530052, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919578804034527412, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6784967
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919578804034527412, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919578804034527412, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055559131222756831, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6784967
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055559131222756831, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055559131222756831, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5882353
       objectReference: {fileID: 0}
     - target: {fileID: 4257139213469184815, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,6 +127,18 @@ PrefabInstance:
     - target: {fileID: 4257139213469184815, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297307377690916663, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6784967
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297307377690916663, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297307377690916663, guid: dc3321824fc0dba41b0cddc40cc23b8b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5882353
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -299,6 +371,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ffe08902fcbcd40823ea2a1e6a5df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
+  penaltyAmount: 15
+  successAmount: 20
+  zoneJoiningBonusAmount: 40
+  winningThreshold: 70
 --- !u!50 &1535458695433540455
 Rigidbody2D:
   serializedVersion: 5
