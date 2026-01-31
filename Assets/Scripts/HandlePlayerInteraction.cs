@@ -1,4 +1,3 @@
-using System;
 using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,7 +5,6 @@ using UnityEngine.InputSystem;
 public class HandlePlayerInteraction : MonoBehaviour
 {
     private EntityScript _entityScript;
-
     private System.Action _interaction;
     private PlayerScript _playerScript;
 
