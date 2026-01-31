@@ -1,4 +1,3 @@
-using System;
 using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,7 +5,6 @@ using UnityEngine.InputSystem;
 public class HandlePlayerInteraction : MonoBehaviour
 {
     private EntityScript _entityScript;
-
     private System.Action _interaction;
     private PlayerScript _playerScript;
 
@@ -51,6 +49,7 @@ public class HandlePlayerInteraction : MonoBehaviour
         var interactable = other.GetComponent<IInteractable>();
         interactable.ToggleInteractButton(true);
         _interaction = interactable.Interact;
+        Messenger.Default.Publish(new ClickEvent());
     }
 
     private void OnTriggerExit2D(Collider2D other)

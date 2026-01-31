@@ -8,8 +8,8 @@ public class LevelData : ScriptableObject
     public AudioClip backgroundMusic;
     public List<ZonePlacement> zones;
     public List<DispenserData> dispenserData;
-
 }
+
 [System.Serializable]
 public struct ZonePlacement
 {

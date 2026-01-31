@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using SuperMaxim.Messaging;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class NpcScript : MonoBehaviour
 {
@@ -56,8 +58,17 @@ public class NpcScript : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     public void OnSuspicious(bool isSuspicious)
     {
+        StartCoroutine(OnSuspiciousDelay(isSuspicious));
+        
+    }
+
+    private IEnumerator OnSuspiciousDelay(bool isSuspicious)
+    {
+        var delay = Random.Range(0, 0.3f);
+        yield return new WaitForSeconds(delay);
         UpdateReacionSprite(isSuspicious);
         Debug.Log($"isSuspicious: {isSuspicious}");
+        Messenger.Default.Publish(new NpcSuspiciousEvent(isSuspicious));
     }
 
     private void UpdateReacionSprite(bool isSuspicious)

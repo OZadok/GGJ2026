@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 6377b4650cd15f841ba28dd1a93193be
+guid: 1a475333b0f43b749b20818d7a885c99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -45112522627159406
-    second: Timer Background_0
+      213: 5021691805682345640
+    second: Timer Background 1_0
   - first:
-      213: -3014979346541469016
-    second: Timer Background_1
+      213: 4089345699070920034
+    second: Timer Background 1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Timer Background_0
+      name: Timer Background 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 411
-        height: 506
+        width: 720
+        height: 934
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 29ae2e1566abf5ff0800000000000000
-      internalID: -45112522627159406
+      spriteID: 8a6af295712a0b540800000000000000
+      internalID: 5021691805682345640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Timer Background_1
+      name: Timer Background 1_1
       rect:
         serializedVersion: 2
-        x: 352
-        y: 26
-        width: 195
-        height: 237
+        x: 469
+        y: 21
+        width: 355
+        height: 361
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a2a1442244a826d0800000000000000
-      internalID: -3014979346541469016
+      spriteID: 265c4ec3f3640c830800000000000000
+      internalID: 4089345699070920034
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Timer Background_0: -45112522627159406
-      Timer Background_1: -3014979346541469016
+      Timer Background 1_0: 5021691805682345640
+      Timer Background 1_1: 4089345699070920034
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
