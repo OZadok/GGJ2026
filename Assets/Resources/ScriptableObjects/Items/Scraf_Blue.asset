@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80ae8a8cb8be8247abf8ab3a3b74327, type: 3}
   m_Name: Scraf_Blue
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemPrefab: {fileID: 8678037899923684967, guid: bd4cdff5de37d6244b9629b856f090e7, type: 3}
+  baseItemPrefab: {fileID: 402848062084996371, guid: 368c75bdd0e2eb641a659d276c38f9cb, type: 3}
+  itemSprites:
+  - {fileID: 21300000, guid: 3dfae0d572a221447a368fdc405f0f5c, type: 3}
   itemType: 0

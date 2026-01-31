@@ -1,12 +1,13 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Item", menuName = "Item", order = 0)]
-public class Item : ScriptableObject
+public class ItemData : ScriptableObject
 {
-    public GameObject itemPrefab;
+    public GameObject baseItemPrefab;
+    public List<Sprite> itemSprites;
     public ItemType itemType;
-
 }
 public enum ItemType
 {

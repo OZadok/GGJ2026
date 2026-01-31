@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b72e238d81365469b86775443b2a63, type: 3}
   m_Name: RedScarfDispenser
   m_EditorClassIdentifier: Assembly-CSharp::DispenserData
-  position: {x: 5, y: -2.5}
-  prefab: {fileID: 5469423022230399586, guid: a59a3d1aa3c95734db3204363dbb333f, type: 3}
+  position: {x: 4.77, y: -6.34}
+  prefab: {fileID: 5469423022230399586, guid: 72d93dbe6f4c8864896162479fe21fc8, type: 3}
   item: {fileID: 11400000, guid: ea4d6d75ffbde2c4783a39be9023efe6, type: 2}
