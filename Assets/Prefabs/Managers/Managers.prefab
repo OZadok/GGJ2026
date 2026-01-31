@@ -3907,7 +3907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856892696398413504, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
       propertyPath: m_text
-      value: Action3
+      value: Hurray
       objectReference: {fileID: 0}
     - target: {fileID: 1856892696398413504, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -4026,7 +4026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856892696398413504, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
       propertyPath: m_text
-      value: Action2
+      value: Punch Table
       objectReference: {fileID: 0}
     - target: {fileID: 1856892696398413504, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -4142,6 +4142,10 @@ PrefabInstance:
     - target: {fileID: 1446150188663260102, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856892696398413504, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+      propertyPath: m_text
+      value: Drink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
