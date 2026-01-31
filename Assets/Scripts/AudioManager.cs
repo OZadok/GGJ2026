@@ -1,4 +1,3 @@
-using System;
 using SuperMaxim.Messaging;
 using UnityEngine;
 
@@ -9,6 +8,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioEvent hurray;
     [SerializeField] private AudioEvent npcSuspicious;
     [SerializeField] private AudioEvent npcNotSuspicious;
+    [SerializeField] private AudioEvent click;
+    [SerializeField] private AudioEvent levelFailed;
+    [SerializeField] private AudioEvent clearLevel;
 
     private void OnEnable()
     {
@@ -16,6 +18,8 @@ public class AudioManager : MonoBehaviour
         Messenger.Default.Subscribe<PlayerPunchTableEvent>(OnPlayerPunchTable);
         Messenger.Default.Subscribe<PlayerHurrayEvent>(OnPlayerHurray);
         Messenger.Default.Subscribe<NpcSuspiciousEvent>(OnNpcSuspicious);
+        Messenger.Default.Subscribe<ClickEvent>(OnClicked);
+        Messenger.Default.Subscribe<LevelEndEvent>(OnLevelEnded);
     }
 
     private void OnDisable()
@@ -24,6 +28,8 @@ public class AudioManager : MonoBehaviour
         Messenger.Default.Unsubscribe<PlayerPunchTableEvent>(OnPlayerPunchTable);
         Messenger.Default.Unsubscribe<PlayerHurrayEvent>(OnPlayerHurray);
         Messenger.Default.Unsubscribe<NpcSuspiciousEvent>(OnNpcSuspicious);
+        Messenger.Default.Unsubscribe<ClickEvent>(OnClicked);
+        Messenger.Default.Unsubscribe<LevelEndEvent>(OnLevelEnded);
     }
 
     private void OnNpcSuspicious(NpcSuspiciousEvent npcSuspiciousEvent)
@@ -51,5 +57,15 @@ public class AudioManager : MonoBehaviour
     private void OnDrinkingBeer(PlayerDrinkingBeerEvent obj)
     {
         beerDrinking.Play();
+    }
+    
+    private void OnClicked(ClickEvent obj)
+    {
+        click.Play();
+    }
+    
+    private void OnLevelEnded(LevelEndEvent obj)
+    {
+        click.Play();
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using SuperMaxim.Messaging;
 using UI;
 using UnityEngine;
 
@@ -73,12 +74,15 @@ public class MainManager : MonoBehaviour
                     break;
                 }
             }
+
             if (wasBroke)
             {
                 continue;
             }
+
             return group;
         }
+
         return null;
     }
 
@@ -92,12 +96,14 @@ public class MainManager : MonoBehaviour
         level++;
         StartLevel();
     }
+
     public void SkipWait()
     {
         _timerActive = false;
         _remainingTime = 0f;
         InvokePursuer();
     }
+
     private void StartLevel()
     {
         playerPrefab.Reset();
@@ -108,6 +114,8 @@ public class MainManager : MonoBehaviour
 
     private void InvokePursuer()
     {
+        Messenger.Default.Publish(new LevelEndEvent(!playerPrefab.IsSus));
+
         if (playerPrefab.IsSus)
         {
             gameOverPanel.gameObject.SetActive(true);

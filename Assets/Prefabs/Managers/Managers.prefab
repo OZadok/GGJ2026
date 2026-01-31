@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b068834df5634057b716c4a8451b01f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainManager
-  level: 2
+  level: 0
   levelTimeSeconds: 30
   playerPrefab: {fileID: 0}
   gameOverPanel: {fileID: 5722474642295070324}
@@ -1176,8 +1176,8 @@ Transform:
   - {fileID: 5478931493358930842}
   - {fileID: 991898981237860103}
   - {fileID: 3470935780765043596}
-  - {fileID: 4524764556238395320}
   - {fileID: 2981437641370249493}
+  - {fileID: 4524764556238395320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1602161793535639080
@@ -2758,10 +2758,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   beerDrinking: {fileID: 11400000, guid: 5662b33469a159d47ab0136569d50fda, type: 2}
-  punchTable: {fileID: 0}
+  punchTable: {fileID: 11400000, guid: 5662b33469a159d47ab0136569d50fda, type: 2}
   hurray: {fileID: 0}
   npcSuspicious: {fileID: 0}
   npcNotSuspicious: {fileID: 0}
+  click: {fileID: 0}
 --- !u!1001 &349294416837415098
 PrefabInstance:
   m_ObjectHideFlags: 0
