@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80ae8a8cb8be8247abf8ab3a3b74327, type: 3}
+  m_Name: Hat_Blue
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  baseItemPrefab: {fileID: 402848062084996371, guid: 368c75bdd0e2eb641a659d276c38f9cb, type: 3}
+  itemSprites:
+  - {fileID: -865167039562375503, guid: 061226daaa5e8374ba5b544795e8ba25, type: 3}
+  itemType: 1
