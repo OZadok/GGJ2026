@@ -26,6 +26,6 @@ public class PlayerMovement : MonoBehaviour
         var difference = targetMovement - currentVelocity;
         _rigidbody2D.AddForce(difference, ForceMode2D.Impulse);
 
-        _entityScript.SetWalking(_rigidbody2D.linearVelocity != Vector2.zero);
+        _entityScript.SetWalking(_rigidbody2D.linearVelocity.magnitude);
     }
 }
