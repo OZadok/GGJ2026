@@ -20,10 +20,10 @@ MonoBehaviour:
     position: {x: 0.6, y: -6.82}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   - zoneData: {fileID: 11400000, guid: 84e94f38a03a0f34ba769af79210dc5c, type: 2}
-    position: {x: 8.5, y: -3.07}
+    position: {x: 9.6, y: -3.07}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   - zoneData: {fileID: 11400000, guid: 4b2240d823ed12449b1182c14a856b71, type: 2}
-    position: {x: -13.04, y: -7.1}
+    position: {x: -8.96, y: -7.1}
     zonePrefab: {fileID: 811126843162442293, guid: cf8c19845a1f27f40adefcfd61ff8437, type: 3}
   dispenserData:
   - {fileID: 11400000, guid: 7fe14c01551bd724a85cfbd2db52d287, type: 2}
