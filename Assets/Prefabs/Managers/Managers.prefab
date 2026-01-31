@@ -1013,6 +1013,7 @@ MonoBehaviour:
   action1Images:
   - {fileID: 2262276045108770529}
   - {fileID: 25362564062563812}
+  - {fileID: 4380990257405081654}
 --- !u!1 &4021154768508854320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3266,6 +3267,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8938373118714668756}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8807698734443596190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &4380990257405081654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4667732056190541538, guid: bcb5eaea97359744699bc0d8d252e73a, type: 3}
+  m_PrefabInstance: {fileID: 8938373118714668756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
