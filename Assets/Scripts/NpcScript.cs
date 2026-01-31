@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using SuperMaxim.Messaging;
 using UnityEngine;
 
 public class NpcScript : MonoBehaviour
@@ -58,6 +59,7 @@ public class NpcScript : MonoBehaviour
     {
         UpdateReacionSprite(isSuspicious);
         Debug.Log($"isSuspicious: {isSuspicious}");
+        Messenger.Default.Publish(new NpcSuspiciousEvent(isSuspicious));
     }
 
     private void UpdateReacionSprite(bool isSuspicious)
