@@ -62,27 +62,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5608939244058790278, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -4.7440877
+      value: -6.5656667
       objectReference: {fileID: 0}
     - target: {fileID: 5608939244058790278, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: -3.313579
+      value: -4.0621734
       objectReference: {fileID: 0}
     - target: {fileID: 5608939244058790278, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
-      value: 3.1741402
+      value: 6.65299
       objectReference: {fileID: 0}
     - target: {fileID: 5608939244058790278, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
-      value: -3.5666323
+      value: -4.300707
       objectReference: {fileID: 0}
     - target: {fileID: 5608939244058790278, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
-      value: 3.4576416
+      value: 5.5537047
       objectReference: {fileID: 0}
     - target: {fileID: 5608939244058790278, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
-      value: -1.9852202
+      value: -1.536063
       objectReference: {fileID: 0}
     - target: {fileID: 5707106393871236136, guid: ed923fd4ba1574789aeb8c79ba41a87c, type: 3}
       propertyPath: m_Sprite
@@ -196,7 +196,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.16904497}
+  m_Offset: {x: 0, y: -0.34218907}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -206,5 +206,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 25.979603, y: 4.127514}
+  m_Size: {x: 25.979603, y: 4.473802}
   m_EdgeRadius: 0
