@@ -26,7 +26,6 @@ public class Dispenser : MonoBehaviour, IInteractable
     public void Interact()
     {
         OnItemCollected?.Invoke(item);
-        ToggleInteractButton(false);
     }
 
     public void ToggleInteractButton(bool toShow)

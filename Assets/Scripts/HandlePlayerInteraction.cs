@@ -43,6 +43,13 @@ public class HandlePlayerInteraction : MonoBehaviour
 
     public void OnGrabAnimationFinished()
     {
+        if (_entityScript.items.ContainsKey(_pendingItem.itemType))
+        {
+            Destroy(_entityScript.items[_pendingItem.itemType].gameObject);
+            _entityScript.items.Remove(_pendingItem.itemType);
+            return;
+        }
+        
         _entityScript.SetItem(_pendingItem);
         _pendingItem = null;
     }
@@ -72,6 +79,5 @@ public class HandlePlayerInteraction : MonoBehaviour
         if (!context.ReadValueAsButton()) return;
         Messenger.Default.Publish(new ClickEvent());
         _interaction?.Invoke();
-        _interaction = null;
     }
 }
