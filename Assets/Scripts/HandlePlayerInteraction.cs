@@ -7,6 +7,7 @@ public class HandlePlayerInteraction : MonoBehaviour
     private EntityScript _entityScript;
     private System.Action _interaction;
     private PlayerScript _playerScript;
+    private ItemData _pendingItem;
 
     private void Awake()
     {
@@ -26,18 +27,24 @@ public class HandlePlayerInteraction : MonoBehaviour
         Zone.OnJoinedToZone -= ZoneOnOnJoinedToZone;
     }
 
+
     private void DispenserOnOnItemCollected(ItemData item)
     {
-        _entityScript.TriggerGrab();
         if (_entityScript.items.ContainsKey(item.itemType))
         {
             Destroy(_entityScript.items[item.itemType].gameObject);
             _entityScript.items.Remove(item.itemType);
+            return;
         }
-        else
-        {
-            _entityScript.SetItem(item);
-        }
+        
+        _pendingItem = item;
+        _entityScript.TriggerGrab();
+    }
+
+    public void OnGrabAnimationFinished()
+    {
+        _entityScript.SetItem(_pendingItem);
+        _pendingItem = null;
     }
     
     private void ZoneOnOnJoinedToZone(Zone zone)
