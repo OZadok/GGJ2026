@@ -12,6 +12,7 @@ public class MainManager : MonoBehaviour
     public PlayerScript playerPrefab;
     [SerializeField] private GameOverPanel gameOverPanel;
     [SerializeField] private LevelClearedPanel levelClearedPanel;
+    [SerializeField] private GameObject gameCompletedPanel; 
     public float RemainingTime => _remainingTime;
     public float LevelTimeSeconds => CurrentLevelData.levelTime;
 
@@ -100,6 +101,10 @@ public class MainManager : MonoBehaviour
     public void NextLevel()
     {
         level++;
+        if(level >= _levels.Count)
+        {
+            gameCompletedPanel.SetActive(true);
+        }
         StartLevel();
     }
 
