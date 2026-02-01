@@ -67,7 +67,6 @@ public class NpcScript : MonoBehaviour
         var delay = Random.Range(0, 0.5f);
         yield return new WaitForSeconds(delay);
         UpdateReacionSprite(isSuspicious);
-        Debug.Log($"isSuspicious: {isSuspicious}");
         Messenger.Default.Publish(new NpcSuspiciousEvent(isSuspicious));
     }
 

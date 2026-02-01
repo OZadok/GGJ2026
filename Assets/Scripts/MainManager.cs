@@ -60,10 +60,8 @@ public class MainManager : MonoBehaviour
     public Group GetGroupIsBlendingTo(EntityScript playerEntity)
     {
         var player = playerEntity.GetComponent<PlayerScript>();
-        Debug.Log(player == null);
-        Debug.Log(player.GetCurrentZone() == null);
-        Debug.Log(player.GetCurrentZone().ZoneData == null);
         var existingGroups = GetUniqueGroupsInZone(player.GetCurrentZone().ZoneData);
+        
         foreach (var group in existingGroups)
         {
             if (group.items.Count != playerEntity.GetItemsCount())
