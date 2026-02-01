@@ -1,8 +1,9 @@
 public class ClickEvent
 {
-    public bool IsSuspicious;
+    public string KeyClicked;
 
-    public ClickEvent()
+    public ClickEvent(string key)
     {
+        KeyClicked = key;
     }
 }

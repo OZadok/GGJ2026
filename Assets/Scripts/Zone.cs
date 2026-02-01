@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Core;
+using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
 public class Zone : MonoBehaviour, IInteractable
 {
     [SerializeField] List<SpawnPoint> spawnPoints;
@@ -27,6 +30,7 @@ public class Zone : MonoBehaviour, IInteractable
             Debug.LogError($"not enough spawnpoints for groups for zone data {zoneData.name}");
             return;
         }
+
         transform.position = positon;
 
         usedSpawnPoints.Clear();
@@ -38,11 +42,14 @@ public class Zone : MonoBehaviour, IInteractable
                 // Debug.Log($"retrying on used spawnpoint at index {spawnPointIndex}");
                 spawnPointIndex = Random.Range(0, spawnPoints.Count);
             }
+
             usedSpawnPoints.Add(spawnPointIndex);
             var point = spawnPoints[spawnPointIndex];
             var npcScript = EntityManager.Instance.SpawnNpc(point, group);
             _npcs.Add(npcScript);
         }
+
+        SortingLayerUtil.SetSortingLayer(GetComponent<SpriteRenderer>());
     }
 
     private void Start()
@@ -79,14 +86,9 @@ public class Zone : MonoBehaviour, IInteractable
         }
     }
 }
+
 [System.Serializable]
 public struct SpawnPoint
 {
     public Transform spawnPoint;
-    public FacingDirction dirction;
-
-}
-public enum FacingDirction
-{
-    Front, Back, Left, Right
 }

@@ -343,7 +343,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Action3[/Keyboard/3]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &4298644741189440469
@@ -375,6 +375,7 @@ MonoBehaviour:
   successAmount: 20
   zoneJoiningBonusAmount: 40
   winningThreshold: 70
+  actionCoolDownSeconds: 2
 --- !u!50 &1535458695433540455
 Rigidbody2D:
   serializedVersion: 5

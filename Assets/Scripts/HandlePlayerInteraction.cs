@@ -77,7 +77,7 @@ public class HandlePlayerInteraction : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.ReadValueAsButton()) return;
-        Messenger.Default.Publish(new ClickEvent());
+        Messenger.Default.Publish(new ClickEvent(context.control.displayName));
         _interaction?.Invoke();
     }
 }
