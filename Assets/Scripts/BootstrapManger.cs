@@ -21,6 +21,12 @@ public class BootstrapManger: MonoBehaviour
 
         Instance = this;
     }
+
+    public void ClearLevel()
+    {
+        _gameObjects.ForEach(Destroy);
+        _gameObjects.Clear();
+    }
     
     public void SetupLevel(LevelData level)
     {
@@ -29,9 +35,8 @@ public class BootstrapManger: MonoBehaviour
             Debug.LogError("Level missing");
             return;
         }
-        
-        _gameObjects.ForEach(Destroy);
-        _gameObjects.Clear();
+
+        ClearLevel();
         
         backgroundRenderer.sprite = level.bgImage;
         backgroundMusic.clip = level.backgroundMusic;

@@ -6,7 +6,7 @@ namespace UI
     {
         public void Reset()
         {
-            MainManager.Instance.Reset();
+            MainManager.Instance.ResetLevel();
             gameObject.SetActive(false);
         }
     }

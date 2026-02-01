@@ -3,6 +3,7 @@ using System.Linq;
 using SuperMaxim.Messaging;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -91,18 +92,27 @@ public class MainManager : MonoBehaviour
         return null;
     }
 
-    public void Reset()
+    public void ResetLevel()
     {
         StartLevel();
+    }
+    
+    public void ResetGame()
+    {
+        level = 0;
+        SceneManager.LoadScene(0);
     }
 
     public void NextLevel()
     {
-        level++;
-        if(level >= _levels.Count)
+        if(level + 1  >= _levels.Count)
         {
             gameCompletedPanel.SetActive(true);
+            BootstrapManger.Instance.ClearLevel();
+            return;
         }
+        
+        level++;
         StartLevel();
     }
 
@@ -146,8 +156,7 @@ public class MainManager : MonoBehaviour
             if (group != null)
                 uniqueGroups.Add(group);
         }
-
-
+        
         return new List<Group>(uniqueGroups);
     }
 }

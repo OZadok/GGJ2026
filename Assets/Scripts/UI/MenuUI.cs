@@ -10,11 +10,12 @@ public class MenuUI : MonoBehaviour
   }
   public void Restart()
   {
-    SceneManager.LoadScene(0);
+    MainManager.Instance.ResetGame();
   }
+  
   public void ExitGame()
   {
-    #if !UNITY_EDITOR
+    #if !UNITY_EDITOR 
     Application.Quit();
     #endif
   }

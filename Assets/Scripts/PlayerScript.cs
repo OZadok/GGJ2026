@@ -89,7 +89,6 @@ public class PlayerScript : MonoBehaviour
     
     public void JoinZone(Zone zone)
     {
-        Debug.Log("Join Zone " + zone.name);
         _zone = zone;
         
         _group = MainManager.Instance.GetGroupIsBlendingTo(_entityScript);
