@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     public static event Action<char> OnActionPreformed;
     public bool IsSus => BlendingLevel < winningThreshold;
     public bool HaveBeer => _entityScript.items.ContainsKey(ItemType.Hand);
+    public float ActionCoolDown => actionCoolDownSeconds;
     
     [SerializeField] private int penaltyAmount = 15;
     [SerializeField] private int successAmount = 20;

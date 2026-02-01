@@ -59,7 +59,6 @@ public class NpcScript : MonoBehaviour
     public void OnSuspicious(bool isSuspicious)
     {
         StartCoroutine(OnSuspiciousDelay(isSuspicious));
-        
     }
 
     private IEnumerator OnSuspiciousDelay(bool isSuspicious)
