@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Linq;
 using SuperMaxim.Messaging;
+using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,6 +24,15 @@ public class NpcScript : MonoBehaviour
     public void Init(SpawnPoint spawnPoint, Group group)
     {
         _group = group;
+        
+        EquipmentAnchors anchors = GetComponent<EquipmentAnchors>();
+        foreach (var item in group.items)
+        {
+            SpawnItem(anchors, item);
+        }
+        
+        SortingLayerUtil.SetStaticSortingLayers(GetComponentsInChildren<SpriteRenderer>(true).ToList());
+
         StartCoroutine(DoActions());
     }
 
@@ -76,4 +87,11 @@ public class NpcScript : MonoBehaviour
         Invoke(nameof(DisableReactionSprite), reactionStayTime);
     }
     void DisableReactionSprite() => reactionRenderer.gameObject.SetActive(false);
+    
+    private void SpawnItem(EquipmentAnchors anchors, ItemData item)
+    {
+        Transform position = anchors.GetItemPosition(item.itemType);
+        var itemGO = Instantiate(item.baseItemPrefab, position, false);
+        itemGO.GetComponent<SpriteRenderer>().sprite = item.itemSprites[Random.Range(0,item.itemSprites.Count)];
+    }
 }

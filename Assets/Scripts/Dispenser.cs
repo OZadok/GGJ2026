@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 public class Dispenser : MonoBehaviour, IInteractable
@@ -16,6 +18,8 @@ public class Dispenser : MonoBehaviour, IInteractable
         var go = Instantiate(item.baseItemPrefab, itemSpawnPoint);
         go.transform.position += item.spawnPointOffset;
         go.GetComponent<SpriteRenderer>().sprite = item.itemSprites[Random.Range(0,item.itemSprites.Count)];
+        
+        SortingLayerUtil.SetStaticSortingLayers(GetComponentsInChildren<SpriteRenderer>(true).ToList());
     }
 
     private void Start()

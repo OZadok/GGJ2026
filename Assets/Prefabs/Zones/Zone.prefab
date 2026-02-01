@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 525234404374335478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.74, z: 0}
+  m_LocalPosition: {x: -2.5, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -214,17 +214,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Zone
   spawnPoints:
   - spawnPoint: {fileID: 1036261483202790844}
-    dirction: 3
   - spawnPoint: {fileID: 2573257506218737756}
-    dirction: 3
   - spawnPoint: {fileID: 7389620148801817849}
-    dirction: 3
   - spawnPoint: {fileID: 4600166220671934939}
-    dirction: 2
   - spawnPoint: {fileID: 404059194953741978}
-    dirction: 2
   - spawnPoint: {fileID: 9173751115848502868}
-    dirction: 2
   interactButtonView: {fileID: 7940913659930332270}
 --- !u!60 &7597023677575029593
 PolygonCollider2D:
@@ -310,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 3623181139096023022}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0, z: 0}
+  m_LocalPosition: {x: -2.5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -342,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 6103244048810856198}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 2, z: 0}
+  m_LocalPosition: {x: -2.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -432,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 7228025145867228415}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalPosition: {x: 2.5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
