@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
-    public static event Action<char> OnActionPreformed;
+    public event Action<char> OnActionPreformed;
     public bool IsSus => BlendingLevel < winningThreshold;
     public bool HaveBeer => _entityScript.items.ContainsKey(ItemType.Hand);
     public float ActionCoolDown => actionCoolDownSeconds;
@@ -16,9 +16,13 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private int zoneJoiningBonusAmount = 40;
     [SerializeField] public int winningThreshold = 70;
     [SerializeField] private float actionCoolDownSeconds = 1.5f;
+    
+    private float _lastActionTime;
 
-    private DateTime _lastActionTime;
-    private bool CanPerformAction => _lastActionTime == default || DateTime.Now >= _lastActionTime.AddSeconds(actionCoolDownSeconds);    
+    bool CanPerformAction =>
+        _lastActionTime <= 0 ||
+        Time.time >= _lastActionTime + actionCoolDownSeconds;
+    
     public int BlendingLevel
     {
         get => _blendingLevel;
@@ -53,6 +57,8 @@ public class PlayerScript : MonoBehaviour
     private void OnDisable()
     {
         Messenger.Default.Unsubscribe<PlayerZoneChangeEvent>(OnPlayerZoneChange);
+        if (_waitFOrActionCoroutine != null)
+            StopCoroutine(_waitFOrActionCoroutine);
     }
 
     private void OnPlayerZoneChange(PlayerZoneChangeEvent playerZoneChangeEvent)
@@ -159,40 +165,46 @@ public class PlayerScript : MonoBehaviour
 
     public void OnAction1(InputAction.CallbackContext context)
     {
-        _action1 = context.performed;
+        if (!context.performed) return;
+        _action1 = true;
+        
         if (_action1 && _zone && HaveBeer && CanPerformAction)
         {
             _actionIsPressed = true;
             _entityScript.DoAction1();
             Messenger.Default.Publish(new PlayerDrinkingBeerEvent());
             OnActionPreformed?.Invoke('1');
-            _lastActionTime = DateTime.Now;
+            _lastActionTime = Time.time;
         }
     }
     
     public void OnAction2(InputAction.CallbackContext context)
     {
-        _action2 = context.performed;
+        if (!context.performed) return;
+        _action2 = true;
+        
         if (_action2&& _zone && CanPerformAction)
         {
             _actionIsPressed = true;
             _entityScript.DoAction2();
             Messenger.Default.Publish(new PlayerPunchTableEvent());
             OnActionPreformed?.Invoke('2');
-            _lastActionTime = DateTime.Now;
+            _lastActionTime = Time.time;
         }
     }
     
     public void OnAction3(InputAction.CallbackContext context)
     {
-        _action3 = context.performed;
+        if (!context.performed) return;
+        _action3 = true;
+        
         if (_action3&& _zone && CanPerformAction)
         {
             _actionIsPressed = true;
             _entityScript.DoAction3();
             Messenger.Default.Publish(new PlayerHurrayEvent());
             OnActionPreformed?.Invoke('3');
-            _lastActionTime = DateTime.Now;
+            _lastActionTime = Time.time;
         }
     }
 }

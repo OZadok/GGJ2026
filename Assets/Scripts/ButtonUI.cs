@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,18 +8,18 @@ public class ButtonUI : MonoBehaviour
     [SerializeField] private Image keyImage;
     [SerializeField] private Image cooldownImage;
 
-    private float _cooldownDuration;
     private RectTransform _cooldownRT;
 
     private float _originalOffsetMinY;
     private float _originalOffsetMaxY;
-
+    private PlayerScript _player;
+    
     private void Awake()
     {
-        _cooldownDuration = GameObject
+        _player = GameObject
             .FindGameObjectWithTag("Player")
-            .GetComponent<PlayerScript>()
-            .ActionCoolDown;
+            .GetComponent<PlayerScript>();
+        
 
         _cooldownRT = cooldownImage.rectTransform;
 
@@ -29,8 +28,8 @@ public class ButtonUI : MonoBehaviour
         _originalOffsetMaxY = _cooldownRT.offsetMax.y;
     }
 
-    private void OnEnable() => PlayerScript.OnActionPreformed += OnActionPreformed;
-    private void OnDisable() => PlayerScript.OnActionPreformed -= OnActionPreformed;
+    private void OnEnable() => _player.OnActionPreformed += OnActionPreformed;
+    private void OnDisable() => _player.OnActionPreformed -= OnActionPreformed;
 
     private void OnActionPreformed(char keyPressed)
     {
@@ -68,7 +67,7 @@ public class ButtonUI : MonoBehaviour
             y => _cooldownRT.offsetMax =
                 new Vector2(_cooldownRT.offsetMax.x, y),
             endY,
-            _cooldownDuration
+            _player.ActionCoolDown
         );
     }
 }
